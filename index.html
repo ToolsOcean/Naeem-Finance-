@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naeem Finance — Compare & Apply Financial Products</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #0F172A; scroll-behavior: smooth; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    .app-card { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 16px; position: relative; overflow: hidden; }
+    .app-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.12); }
+    .app-card:active { transform: scale(0.98); }
+
+    .modal-backdrop { background-color: rgba(15, 23, 42, 0.65); backdrop-filter: blur(6px); }
+    .slide-dot { transition: all 0.3s ease; }
+
+    @keyframes floating { 0% { transform: translateY(0px) rotate(12deg); } 50% { transform: translateY(-5px) rotate(14deg); } 100% { transform: translateY(0px) rotate(12deg); } }
+    .floating-card { animation: floating 3s ease-in-out infinite; }
+    input[type=range] { accent-color: #2563EB; }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- 1. Header -->
+  <header class="bg-white sticky top-0 z-40 border-b border-slate-200 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 py-2.5 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200 shrink-0 bg-slate-100 p-0.5 shadow-inner">
+          <img 
+            src="https://imgh.in/host/107qpx" 
+            alt="Naeem Finance" 
+            class="w-full h-full object-cover rounded-full"
+            onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Naeem+Finance&background=2563EB&color=fff&size=100&bold=true';"
+          >
+        </div>
+        <div>
+          <span class="text-xs font-black tracking-tight text-slate-900 block leading-tight">Naeem<span class="text-blue-600">Finance</span></span>
+          <span class="text-[9px] text-slate-400 font-bold uppercase tracking-widest">Financial Affiliate Hub</span>
+        </div>
+      </div>
+      
+      <a href="tel:+917070664940" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200/80 hover:bg-blue-100 transition shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Contact Expert</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="max-w-4xl mx-auto px-4 w-full">
+
+    <!-- 2. GroMo Style 3D Banners -->
+    <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 shadow-sm relative">
+      <div id="sliderTrack" class="flex transition-transform duration-500 ease-out">
+        
+        <!-- Slide 1: Kotak 811 -->
+        <div class="w-full shrink-0 flex items-center justify-between p-4 sm:p-5 gap-3 bg-gradient-to-br from-[#09111e] via-[#0D1E38] to-[#152e54] text-white">
+          <div class="flex-1">
+            <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full">⚡ Instant Digital A/c</span>
+            <h2 class="text-base sm:text-lg font-black mt-1.5 leading-tight">Kotak 811 Classic Savings</h2>
+            <div class="text-[10px] text-slate-300 mt-1.5 space-y-0.5 leading-relaxed">
+              <div class="flex items-center gap-1">✓ ₹0 Balance Maintenance</div>
+              <div class="flex items-center gap-1">✓ Free Platinum Virtual Debit Card</div>
+              <div class="flex items-center gap-1">✓ Flat 5% Cashback Rewards</div>
+            </div>
+            <a href="https://sales.gromo.in/kt/kXI6nqhtkS" target="_blank" class="mt-3 inline-block bg-red-600 hover:bg-red-500 text-white font-bold text-[10px] px-3.5 py-1.5 rounded-lg shrink-0 shadow active:scale-95 transition">
+              Open Zero Balance A/c →
+            </a>
+          </div>
+          <div class="w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center relative shrink-0">
+            <div class="absolute w-20 h-20 bg-blue-500/30 blur-2xl rounded-full"></div>
+            <div class="w-16 h-24 bg-[#020617] rounded-xl border-2 border-[#475569] shadow-inner p-1 transform -rotate-3 overflow-hidden">
+              <div class="w-10 h-1 bg-[#334155] rounded-full mx-auto mb-1"></div>
+              <div class="bg-[#1e293b] rounded-lg h-full p-1.5">
+                <div class="w-full h-4 bg-emerald-600 rounded-md mb-1.5"></div>
+                <div class="w-2/3 h-1.5 bg-[#475569] rounded mt-1.5"></div>
+              </div>
+            </div>
+            <div class="absolute right-0 bottom-4 w-20 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-lg border border-white/30 transform rotate(12deg) shadow-2xl p-1.5 flex flex-col justify-between floating-card">
+              <div class="flex justify-between items-center"><div class="w-3 h-2.5 bg-yellow-400 rounded-sm"></div><span class="text-[6px] font-black text-white">VISA</span></div>
+              <div class="text-[6px] text-white/80 font-mono tracking-wider">•••• 8110</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Flipkart Axis Bank Card -->
+        <div class="w-full shrink-0 flex items-center justify-between p-4 sm:p-5 gap-3 bg-gradient-to-br from-[#09111e] via-[#161F38] to-[#252354] text-white">
+          <div class="flex-1">
+            <span class="text-[9px] font-black uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-full">🔥 Top Cashback Card</span>
+            <h2 class="text-base sm:text-lg font-black mt-1.5 leading-tight">Flipkart Axis Bank Credit Card</h2>
+            <div class="text-[10px] text-slate-300 mt-1.5 space-y-0.5 leading-relaxed">
+              <div class="flex items-center gap-1">✓ Flat 5% Unlimited Cashback (Flipkart)</div>
+              <div class="flex items-center gap-1">✓ 4% Cashback on Swiggy & Uber</div>
+              <div class="flex items-center gap-1">✓ ₹350 Welcome Activation Voucher</div>
+            </div>
+            <a href="https://sales.gromo.in/ac/kXI6nqhtkS" target="_blank" class="mt-3 inline-block bg-[#97144D] hover:opacity-90 text-white font-bold text-[10px] px-3.5 py-1.5 rounded-lg shrink-0 shadow active:scale-95 transition">
+              Get Card Now →
+            </a>
+          </div>
+          <div class="w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center relative shrink-0">
+            <div class="absolute w-20 h-20 bg-blue-500/30 blur-2xl rounded-full"></div>
+            <div class="w-16 h-24 bg-[#020617] rounded-xl border-2 border-[#475569] shadow-inner p-1 transform -rotate-3 overflow-hidden">
+              <div class="w-10 h-1 bg-[#334155] rounded-full mx-auto mb-1"></div>
+              <div class="bg-[#1e293b] rounded-lg h-full p-1.5">
+                <div class="w-full h-4 bg-indigo-600 rounded-md mb-1.5"></div>
+              </div>
+            </div>
+            <div class="absolute right-0 bottom-4 w-20 h-12 bg-slate-900 rounded-lg border-2 border-indigo-400 transform rotate(12deg) shadow-2xl p-1.5 flex flex-col justify-between floating-card">
+              <div class="relative flex justify-between items-center"><div class="w-3 h-2.5 bg-yellow-400 rounded-sm"></div><span class="text-[6px] font-black text-white">AXIS</span></div>
+              <div class="relative text-[6px] text-white/80 font-mono tracking-wider">•••• 4412</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Pocketly Loan -->
+        <div class="w-full shrink-0 flex items-center justify-between p-4 sm:p-5 gap-3 bg-gradient-to-br from-[#0C121A] via-[#0F1E2A] to-[#122A3A] text-white">
+          <div class="flex-1">
+            <span class="text-[9px] font-black uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded-full">🚀 Micro Cash Loan</span>
+            <h2 class="text-base sm:text-lg font-black mt-1.5 leading-tight">Pocketly Instant Cash Loan</h2>
+            <div class="text-[10px] text-slate-300 mt-1.5 space-y-0.5 leading-relaxed">
+              <div class="flex items-center gap-1">✓ ₹500 to ₹10,000 Direct Disbursal</div>
+              <div class="flex items-center gap-1">✓ No Past CIBIL Score Needed</div>
+              <div class="flex items-center gap-1">✓ Referral Code: <span class="text-amber-300 font-bold">HTY9KF2Q</span></div>
+            </div>
+            <a href="https://pocketly.sng.link/D4bv7/8nx0/g23r?_dl=pocketly%3A%2F%2FReferAndEarnScreen&_ddl=pocketly%3A%2F%2FReferAndEarnScreen&_forward_params=2&code=HTY9KF2Q&name=Md%20Naeem%20Akhtar" target="_blank" class="mt-3 inline-block bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[10px] px-3.5 py-1.5 rounded-lg shrink-0 shadow active:scale-95 transition">
+              Get Instant Cash →
+            </a>
+          </div>
+          <div class="w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center relative shrink-0">
+            <div class="absolute w-20 h-20 bg-blue-500/30 blur-2xl rounded-full"></div>
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-[#1e293b] rounded-2xl border border-white/10 p-2 flex flex-col justify-between transform -rotate-6">
+              <div class="flex justify-between items-center"><span class="text-xl">₹</span><span class="text-[8px] font-bold text-emerald-400">APPROVED</span></div>
+              <div class="w-full h-1 bg-emerald-500 rounded"></div>
+            </div>
+            <div class="absolute w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center -top-2 -right-2 text-xl font-bold floating-card">⚡</div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Angel One Demat -->
+        <div class="w-full shrink-0 flex items-center justify-between p-4 sm:p-5 gap-3 bg-gradient-to-br from-[#0C121A] via-[#131B2A] to-[#1E253A] text-white">
+          <div class="flex-1">
+            <span class="text-[9px] font-black uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-500/40 px-2 py-0.5 rounded-full">📈 Zero Brokerage</span>
+            <h2 class="text-base sm:text-lg font-black mt-1.5 leading-tight">Angel One Super Demat A/c</h2>
+            <div class="text-[10px] text-slate-300 mt-1.5 space-y-0.5 leading-relaxed">
+              <div class="flex items-center gap-1">✓ ₹0 Account Opening Charges</div>
+              <div class="flex items-center gap-1">✓ ₹0 Delivery Brokerage Lifetime</div>
+              <div class="flex items-center gap-1">✓ Free AMC for 1st Year</div>
+            </div>
+            <a href="https://leads.goldenteam.in/?h=SHFjNEhEQWY0bEZrdCtwUGVOS21QZz09" target="_blank" class="mt-3 inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold text-[10px] px-3.5 py-1.5 rounded-lg shrink-0 shadow active:scale-95 transition">
+              Open Free Demat →
+            </a>
+          </div>
+          <div class="w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center relative shrink-0">
+            <div class="absolute w-20 h-20 bg-blue-500/30 blur-2xl rounded-full"></div>
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-[#1e293b] rounded-2xl border border-white/10 p-2 flex flex-col transform rotate-6 relative overflow-hidden">
+              <div class="text-[10px] font-bold">ANGEL</div>
+              <div class="absolute bottom-1 left-2 w-16 h-8 flex gap-0.5 items-end justify-between">
+                <div class="w-2 h-2 bg-red-500 rounded-sm"></div><div class="w-2 h-4 bg-emerald-500 rounded-sm"></div><div class="w-2 h-3 bg-emerald-500 rounded-sm"></div>
+              </div>
+            </div>
+            <div class="absolute w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center -top-2 -right-2 text-xl font-bold floating-card">📈</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex justify-center gap-1.5">
+        <button onclick="goToSlide(0)" class="w-4 h-1 rounded-full bg-white slide-dot transition-all"></button>
+        <button onclick="goToSlide(1)" class="w-1 h-1 rounded-full bg-white/40 slide-dot transition-all"></button>
+        <button onclick="goToSlide(2)" class="w-1 h-1 rounded-full bg-white/40 slide-dot transition-all"></button>
+        <button onclick="goToSlide(3)" class="w-1 h-1 rounded-full bg-white/40 slide-dot transition-all"></button>
+      </div>
+    </div>
+
+    <!-- 3. Categories -->
+    <div class="mt-5">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-[11px] font-bold uppercase tracking-wide text-slate-500">Categories</h2>
+        <span class="text-[10px] font-bold text-blue-600 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-md">102 Deals</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+        <button onclick="selectCategory('zerocibil')" class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex items-center justify-between text-left cursor-pointer app-card group">
+          <div class="relative z-10">
+            <h3 class="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition">Zero CIBIL Loan</h3>
+            <span class="text-[10px] text-emerald-600 font-semibold block mt-0.5">First-Time Borrowers</span>
+            <span class="text-[9px] bg-emerald-50 text-emerald-700 font-bold px-1.5 py-0.5 rounded mt-1.5 inline-block border border-emerald-100">12 Offers</span>
+          </div>
+          <div class="w-9 h-9 rounded-lg bg-emerald-50 flex items-center justify-center text-lg shrink-0 relative z-10">⚡</div>
+        </button>
+
+        <button onclick="selectCategory('cards')" class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex items-center justify-between text-left cursor-pointer app-card group">
+          <div class="relative z-10">
+            <h3 class="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition">Credit Cards</h3>
+            <span class="text-[10px] text-indigo-600 font-semibold block mt-0.5">Cashback & Rewards</span>
+            <span class="text-[9px] bg-indigo-50 text-indigo-700 font-bold px-1.5 py-0.5 rounded mt-1.5 inline-block border border-indigo-100">32 Offers</span>
+          </div>
+          <div class="w-9 h-9 rounded-lg bg-indigo-50 flex items-center justify-center text-lg shrink-0 relative z-10">💳</div>
+        </button>
+
+        <button onclick="selectCategory('demat')" class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex items-center justify-between text-left cursor-pointer app-card group">
+          <div class="relative z-10">
+            <h3 class="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition">Demat & Wealth</h3>
+            <span class="text-[10px] text-amber-600 font-semibold block mt-0.5">Stocks, FD & SIP</span>
+            <span class="text-[9px] bg-amber-50 text-amber-700 font-bold px-1.5 py-0.5 rounded mt-1.5 inline-block border border-amber-100">20 Offers</span>
+          </div>
+          <div class="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center text-lg shrink-0 relative z-10">📈</div>
+        </button>
+
+        <button onclick="selectCategory('loans')" class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex items-center justify-between text-left cursor-pointer app-card group">
+          <div class="relative z-10">
+            <h3 class="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition">Personal Loans</h3>
+            <span class="text-[10px] text-blue-600 font-semibold block mt-0.5">Instant Disbursal</span>
+            <span class="text-[9px] bg-blue-50 text-blue-700 font-bold px-1.5 py-0.5 rounded mt-1.5 inline-block border border-blue-100">26 Offers</span>
+          </div>
+          <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-lg shrink-0 relative z-10">💰</div>
+        </button>
+
+        <button onclick="selectCategory('savings')" class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex items-center justify-between text-left cursor-pointer app-card group">
+          <div class="relative z-10">
+            <h3 class="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition">Saving A/c</h3>
+            <span class="text-[10px] text-purple-600 font-semibold block mt-0.5">Zero Balance Banking</span>
+            <span class="text-[9px] bg-purple-50 text-purple-700 font-bold px-1.5 py-0.5 rounded mt-1.5 inline-block border border-purple-100">5 Offers</span>
+          </div>
+          <div class="w-9 h-9 rounded-lg bg-purple-50 flex items-center justify-center text-lg shrink-0 relative z-10">🏦</div>
+        </button>
+
+        <button onclick="selectCategory('secured')" class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex items-center justify-between text-left cursor-pointer app-card group">
+          <div class="relative z-10">
+            <h3 class="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition">Secured Card</h3>
+            <span class="text-[10px] text-cyan-600 font-semibold block mt-0.5">Card Against FD</span>
+            <span class="text-[9px] bg-cyan-50 text-cyan-700 font-bold px-1.5 py-0.5 rounded mt-1.5 inline-block border border-cyan-100">7 Offers</span>
+          </div>
+          <div class="w-9 h-9 rounded-lg bg-cyan-50 flex items-center justify-center text-lg shrink-0 relative z-10">🛡</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4. Filter Tabs & Search Bar -->
+    <div class="mt-6" id="offersSection">
+      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 border-b border-slate-200">
+        <button id="tabZeroCibil" onclick="switchTab('zerocibil')" class="px-3 py-1.5 font-bold text-xs rounded-lg text-slate-600 bg-white border border-slate-200 shrink-0 transition">Zero CIBIL (12)</button>
+        <button id="tabCards" onclick="switchTab('cards')" class="px-3 py-1.5 font-semibold text-xs rounded-lg text-slate-600 bg-white border border-slate-200 shrink-0 transition">Credit Cards (32)</button>
+        <button id="tabDemat" onclick="switchTab('demat')" class="px-3 py-1.5 font-semibold text-xs rounded-lg text-slate-600 bg-white border border-slate-200 shrink-0 transition">Demat & Invest (20)</button>
+        <button id="tabLoans" onclick="switchTab('loans')" class="px-3 py-1.5 font-semibold text-xs rounded-lg text-slate-600 bg-white border border-slate-200 shrink-0 transition">Loans (26)</button>
+        <button id="tabSavings" onclick="switchTab('savings')" class="px-3 py-1.5 font-semibold text-xs rounded-lg text-slate-600 bg-white border border-slate-200 shrink-0 transition">Saving A/c (5)</button>
+        <button id="tabSecured" onclick="switchTab('secured')" class="px-3 py-1.5 font-semibold text-xs rounded-lg text-slate-600 bg-white border border-slate-200 shrink-0 transition">Secured Cards (7)</button>
+      </div>
+
+      <div class="mt-3 relative">
+        <input type="text" id="globalSearch" onkeyup="filterCurrentData()" placeholder="ब्रांड या बैंक खोजें (उदा. Pocketly, Branch, mPokket, Angel One, Flipkart Axis)..." class="w-full px-3.5 py-2 pl-9 rounded-xl bg-white border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600 text-xs shadow-sm transition">
+        <svg class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </div>
+    </div>
+
+    <!-- 5. Offers Grid Section -->
+    <main class="mt-4 pb-4">
+      <div class="flex items-center justify-between mb-3">
+        <h2 id="sectionHeading" class="text-xs font-bold text-slate-800 uppercase tracking-wide">Zero CIBIL & First-Time Borrower Loans</h2>
+        <span id="resultCount" class="text-[10px] font-bold text-blue-600 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-md">12 Offers</span>
+      </div>
+
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div id="noResults" class="hidden text-center py-10 bg-white rounded-xl border border-slate-200 my-4">
+        <p class="text-xs text-slate-500 font-semibold">कोई ऑफर नहीं मिला। कृपया दूसरा बैंक या ऐप का नाम खोजें।</p>
+      </div>
+    </main>
+
+    <!-- 6. Loan EMI Calculator -->
+    <section class="mt-6 bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-sm">
+      <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-slate-100">
+        <div><span class="text-[9px] font-bold uppercase tracking-wider text-blue-600">Free Financial Tool</span><h2 class="text-xs sm:text-sm font-extrabold text-slate-900">EMI & Salary Eligibility Calculator</h2></div><span class="text-lg">🧮</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+        <div class="space-y-3 text-xs">
+          <div><div class="flex justify-between font-semibold mb-1"><span class="text-slate-500">Loan Amount:</span><span id="amtLabel" class="text-blue-700 font-bold text-xs">₹ 1,00,000</span></div><input type="range" id="loanAmount" min="10000" max="1500000" step="10000" value="100000" class="w-full h-1.5 bg-slate-200 rounded-lg cursor-pointer" oninput="calculateEMI()"><div class="flex justify-between text-[9px] text-slate-400 mt-0.5"><span>₹10K</span><span>₹15 Lakh</span></div></div>
+          <div><div class="flex justify-between font-semibold mb-1"><span class="text-slate-500">Tenure:</span><span id="tenureLabel" class="text-blue-700 font-bold text-xs">24 Months</span></div><input type="range" id="loanTenure" min="3" max="60" step="1" value="24" class="w-full h-1.5 bg-slate-200 rounded-lg cursor-pointer" oninput="calculateEMI()"><div class="flex justify-between text-[9px] text-slate-400 mt-0.5"><span>3 Mos</span><span>60 Mos</span></div></div>
+          <div><div class="flex justify-between font-semibold mb-1"><span class="text-slate-500">Interest Rate (% p.a.):</span><span id="rateLabel" class="text-blue-700 font-bold text-xs">14.0 %</span></div><input type="range" id="loanRate" min="9" max="36" step="0.5" value="14" class="w-full h-1.5 bg-slate-200 rounded-lg cursor-pointer" oninput="calculateEMI()"><div class="flex justify-between text-[9px] text-slate-400 mt-0.5"><span>9%</span><span>36%</span></div></div>
+        </div>
+
+        <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-100 flex flex-col justify-between">
+          <span class="text-[9px] uppercase font-bold text-slate-400 block mb-1">Monthly Loan EMI</span>
+          <span id="emiResult" class="text-xl font-black text-slate-900 leading-tight">₹ 4,801</span>
+          <div class="grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-slate-200 text-[11px]"><div class="flex justify-between text-[10px]">Interest: <span id="interestResult" class="font-bold text-slate-700 ml-1">₹15,231</span></div><div class="flex justify-between text-[10px]">Total: <span id="totalResult" class="font-bold text-slate-700 ml-1">₹1,15,231</span></div></div>
+          <div class="mt-2.5 p-2 rounded-lg bg-blue-50/80 border border-blue-100 text-[10px] text-blue-900">💼 <strong class="ml-1">Min. Salary Needed:</strong> Approx <span id="incomeNeeded" class="font-bold text-blue-700 ml-1">₹12,000/mo</span> (FOIR 40% rule).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Customer Reviews Section -->
+    <section class="mt-8 mb-6">
+      <div class="flex items-center justify-between mb-3.5">
+        <div><span class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Social Proof</span><h2 class="text-xs font-bold text-slate-900">Verified User Experiences</h2></div>
+        <span class="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">★ 4.9/5 Rating</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex flex-col justify-between app-card"><p class="text-[10px] text-slate-600 italic">"Blank CIBIL score me Pocketly apply kiya, bina salary slip ₹6k loan 15 min me account me aa gaya!"</p><div class="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]"><span class="font-bold text-slate-800">Rahul Kumar</span><span class="text-amber-500 font-bold">★★★★★</span></div></div>
+        <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex flex-col justify-between app-card"><p class="text-[10px] text-slate-600 italic">"Flipkart Axis Bank card yahan se apply kiya, 4 din me approve hua aur Swiggy par guaranteed cashback."</p><div class="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]"><span class="font-bold text-slate-800">Amit Sharma</span><span class="text-amber-500 font-bold">★★★★★</span></div></div>
+        <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex flex-col justify-between app-card"><p class="text-[10px] text-slate-600 italic">"Angel One free account setup link genuine thi. Zero delivery brokerage par trading start kiya."</p><div class="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]"><span class="font-bold text-slate-800">Vikas Kumar</span><span class="text-amber-500 font-bold">★★★★★</span></div></div>
+        <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex flex-col justify-between app-card"><p class="text-[10px] text-slate-600 italic">"Zero balance Kotak 811 account opening process yahan ke guide se bilkul simple aur transparent tha."</p><div class="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]"><span class="font-bold text-slate-800">Mohd. Ali</span><span class="text-amber-500 font-bold">★★★★★</span></div></div>
+      </div>
+    </section>
+
+    <!-- 8. Helpline Strip -->
+    <div class="mt-6 mb-8 rounded-xl p-3 bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-2.5 shadow-sm border border-white/10">
+      <div class="flex items-center gap-2.5 text-left"><span class="text-xl">📞</span><div><h3 class="text-xs sm:text-sm font-bold leading-tight">Confused Which Product is Right for You?</h3><p class="text-[10px] text-slate-400 mt-0.5">Call our expert advisor for 100% free personalized guidance.</p></div></div>
+      <a href="tel:+917070664940" class="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[10px] px-3.5 py-2 rounded-lg transition active:scale-95 shrink-0 shadow-md">Call: +91 7070664940</a>
+    </div>
+
+  </div>
+
+  <!-- 9. Modern Footer with Founder Profile Card & Pages -->
+  <footer class="bg-white border-t border-slate-200 mt-10 pt-6 pb-8 text-slate-500">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="rounded-xl p-4 bg-slate-50 text-slate-900 shadow-inner flex flex-col sm:flex-row items-center justify-between gap-4 mb-5 border border-slate-200/80">
+        <div class="flex items-center gap-3.5 text-left shrink-0">
+          <img 
+            id="founderAvatar"
+            src="https://imgh.in/host/107qpx" 
+            alt="Md Naeem Akhtar" 
+            class="w-12 h-12 rounded-full object-cover border-2 border-slate-200 shadow shrink-0 bg-white p-0.5"
+            onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Md+Naeem+Akhtar&background=2563EB&color=fff&size=120&bold=true';"
+          >
+          <div>
+            <span class="text-[9px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full inline-block mb-1">Founder & Financial Advisor</span>
+            <h3 class="text-base font-extrabold text-slate-950 leading-tight">Md Naeem Akhtar</h3>
+            <p class="text-slate-500 text-[10px] mt-0.5">Contact: +91 7070664940</p>
+          </div>
+        </div>
+
+        <div class="shrink-0 flex items-center gap-1.5 w-full sm:w-auto">
+          <a href="tel:+917070664940" class="flex-1 sm:flex-none text-center bg-blue-600 hover:bg-blue-500 text-white font-bold text-[10px] px-3 py-1.5 rounded-lg transition">Call</a>
+          <a href="https://instagram.com/shy.is.character" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none text-center bg-gradient-to-r from-pink-600 to-rose-600 text-white font-bold text-[10px] px-3 py-1.5 rounded-lg transition">Instagram</a>
+          <a href="mailto:naeemediting2023@gmail.com" class="flex-1 sm:flex-none text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-[10px] px-3 py-1.5 rounded-lg border border-slate-200 transition">Email</a>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center gap-4 text-xs font-semibold text-slate-600 mb-4 pt-1">
+        <button onclick="openModal('aboutModal')" class="hover:text-blue-600 transition">About Us</button>
+        <span class="text-slate-300">•</span>
+        <button onclick="openModal('termsModal')" class="hover:text-blue-600 transition">Terms & Conditions</button>
+        <span class="text-slate-300">•</span>
+        <button onclick="openModal('contactModal')" class="hover:text-blue-600 transition">Contact Us</button>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-[10px] text-slate-500 mb-4 leading-relaxed">
+        <strong class="text-slate-700">अस्वीकरण (Disclaimer):</strong> Naeem Finance कोई बैंक, NBFC या सेबी-पंजीकृत सलाहकार नहीं है। यह वेबसाइट केवल RBI और SEBI पंजीकृत संस्थाओं (GroMo, BankSathi) के आधिकारिक रेफरल लिंक्स प्रदान करती है। लोन या कार्ड की स्वीकृति ग्राहक की प्रोफाइल और बैंक की पॉलिसी पर निर्भर करती है। किसी को भी एडवांस फीस न दें।
+      </div>
+
+      <div class="flex items-center justify-between text-[11px] text-slate-400">
+        <p>© 2026 Naeem Finance</p>
+        <p>Built with ❤️ by Md Naeem Akhtar</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- POPUP MODALS -->
+  <div id="aboutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="bg-white rounded-xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 relative max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100"><h3 class="text-sm font-extrabold text-slate-900">About Naeem Finance</h3><button onclick="closeModal('aboutModal')" class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center font-bold text-xs">✕</button></div>
+      <div class="mt-3 text-[11px] text-slate-600 space-y-2 leading-relaxed"><p><strong>Naeem Finance</strong> verified banks, NBFCs aur fintech platforms ke best affiliate offers compare karne ka direct platform hai, specifically micro-loans aur student borrowers ke liye transparent choices enable karta hai.</p><p><strong>Founder:</strong> Md Naeem Akhtar<br><strong>Helpline:</strong> +91 7070664940</p></div>
+      <div class="mt-5 text-right"><button onclick="closeModal('aboutModal')" class="bg-blue-600 text-white font-bold text-xs px-4 py-1.5 rounded-lg">Close</button></div>
+    </div>
+  </div>
+  <div id="termsModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="bg-white rounded-xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 relative max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100"><h3 class="text-sm font-extrabold text-slate-900">Terms & Conditions</h3><button onclick="closeModal('termsModal')" class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center font-bold text-xs">✕</button></div>
+      <div class="mt-3 text-[11px] text-slate-600 space-y-2 leading-relaxed"><p>1. <strong>Direct Referral Only:</strong> Hum authorised trackers provide karte hain, loan/card approval direct vendor-end KYC process par dependent hai.</p><p>2. <strong>No Fees:</strong> Naeem Finance loan approval ke liye koi advance fees nahi leta. Kisi ko Advanced fees na dein.</p></div>
+      <div class="mt-5 text-right"><button onclick="closeModal('termsModal')" class="bg-blue-600 text-white font-bold text-xs px-4 py-1.5 rounded-lg">I Understand</button></div>
+    </div>
+  </div>
+  <div id="contactModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="bg-white rounded-xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 relative max-h-[85vh] overflow-y-auto"><div class="flex items-center justify-between pb-3 border-b border-slate-100"><h3 class="text-sm font-extrabold text-slate-900">Contact Support</h3><button onclick="closeModal('contactModal')" class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center font-bold text-xs">✕</button></div><div class="mt-3 text-[11px] text-slate-600 space-y-2 leading-relaxed"><div class="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1"><p><strong>Founder:</strong> Md Naeem Akhtar</p><p><strong>Direct Call / WhatsApp:</strong> <a href="tel:+917070664940" class="text-blue-600 font-bold underline">+91 7070664940</a></p><p><strong>Email:</strong> <a href="mailto:naeemediting2023@gmail.com" class="text-blue-600 underline">naeemediting2023@gmail.com</a></p><p><strong>Instagram:</strong> <a href="https://instagram.com/shy.is.character" target="_blank" class="text-pink-600 underline">@shy.is.character</a></p></div></div><div class="mt-5 text-right"><button onclick="closeModal('contactModal')" class="bg-blue-600 text-white font-bold text-xs px-4 py-1.5 rounded-lg">Close</button></div></div>
+  </div>
+
+  <!-- Script: Complete 102 Offers Database & Accurate Brand Matching Engine -->
+  <script>
+    function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+    function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+    // Slider Engine
+    let currentSlide = 0;
+    const totalSlides = 4;
+    const track = document.getElementById('sliderTrack');
+    const dots = document.querySelectorAll('.slide-dot');
+    function goToSlide(idx) {
+      currentSlide = idx;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      dots.forEach((dot, i) => { dot.className = i === idx ? 'w-4 h-1 rounded-full bg-white slide-dot transition-all' : 'w-1 h-1 rounded-full bg-white/40 slide-dot transition-all'; });
+    }
+    setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides; goToSlide(currentSlide); }, 4500);
+
+    // EMI Calculator
+    function calculateEMI() {
+      const P = parseFloat(document.getElementById('loanAmount').value); 
+      const N = parseFloat(document.getElementById('loanTenure').value); 
+      const annualR = parseFloat(document.getElementById('loanRate').value); 
+      const R = (annualR / 12) / 100;
+      document.getElementById('amtLabel').innerText = '₹ ' + P.toLocaleString('en-IN'); 
+      document.getElementById('tenureLabel').innerText = N + ' Months'; 
+      document.getElementById('rateLabel').innerText = annualR.toFixed(1) + ' %';
+      const emi = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1); 
+      const totalPayable = emi * N; 
+      const totalInterest = totalPayable - P; 
+      const minIncome = Math.round(emi / 0.40);
+      document.getElementById('emiResult').innerText = '₹ ' + Math.round(emi).toLocaleString('en-IN'); 
+      document.getElementById('interestResult').innerText = '₹ ' + Math.round(totalInterest).toLocaleString('en-IN'); 
+      document.getElementById('totalResult').innerText = '₹ ' + Math.round(totalPayable).toLocaleString('en-IN'); 
+      document.getElementById('incomeNeeded').innerText = '₹' + minIncome.toLocaleString('en-IN') + '/mo';
+    }
+
+    // Toggle Details Accordion Function
+    function toggleDetails(id) {
+      const el = document.getElementById(`details-${id}`);
+      const btn = document.getElementById(`btn-${id}`);
+      if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+        btn.innerText = 'Hide Details ▲';
+      } else {
+        el.classList.add('hidden');
+        btn.innerText = 'View Details & Interest Rate ▼';
+      }
+    }
+
+    // Helper for pure in-code SVG vector logos (Option 3 - 100% Fail-Proof)
+    function getSvgBadge(type) {
+      if (type === 'jio') {
+        return `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="48" fill="#0A2885"/><text x="50" y="58" fill="#fff" font-size="28" font-weight="900" text-anchor="middle" font-family="sans-serif">Jio</text></svg>`;
+      }
+      if (type === 'ring') {
+        return `<svg viewBox="0 0 100 100" class="w-full h-full"><rect width="100" height="100" rx="20" fill="#4338CA"/><circle cx="50" cy="50" r="32" fill="none" stroke="#38BDF8" stroke-width="12"/></svg>`;
+      }
+      if (type === 'fatakpay') {
+        return `<svg viewBox="0 0 100 100" class="w-full h-full"><rect width="100" height="100" rx="20" fill="#0284C7"/><path d="M55 20 L25 55 L48 55 L42 80 L75 45 L52 45 Z" fill="#FACC15"/></svg>`;
+      }
+      if (type === 'unity') {
+        return `<svg viewBox="0 0 100 100" class="w-full h-full"><rect width="100" height="100" rx="20" fill="#0369A1"/><circle cx="50" cy="50" r="28" fill="none" stroke="#fff" stroke-width="8"/><text x="50" y="58" fill="#fff" font-size="24" font-weight="900" text-anchor="middle">U</text></svg>`;
+      }
+      if (type === 'incred') {
+        return `<svg viewBox="0 0 100 100" class="w-full h-full"><rect width="100" height="100" rx="20" fill="#EA580C"/><text x="50" y="60" fill="#fff" font-size="26" font-weight="900" text-anchor="middle">InCred</text></svg>`;
+      }
+      if (type === 'rupayfuel') {
+        return `<svg viewBox="0 0 100 100" class="w-full h-full"><rect width="100" height="100" rx="20" fill="#C2410C"/><path d="M40 30 C40 30 35 45 40 55 C45 65 55 65 55 55 C55 45 65 40 65 30 C55 25 45 25 40 30 Z" fill="#FDBA74"/><text x="50" y="82" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">FUEL</text></svg>`;
+      }
+      if (type === 'quickcash') {
+        return `<svg viewBox="0 0 100 100" class="w-full h-full"><rect width="100" height="100" rx="20" fill="#047857"/><text x="50" y="60" fill="#fff" font-size="34" font-weight="900" text-anchor="middle">₹</text></svg>`;
+      }
+      return null;
+    }
+
+    // Exact Brand Palette Matching (Zero Pitch-Black Generic Buttons)
+    function getBrandPalette(name) {
+      const n = name.toLowerCase();
+      
+      if (n.includes('axis')) {
+        return { cardBg: 'bg-[#FFF5F8]', border: 'border-2 border-[#97144D]', btnBg: 'bg-[#97144D] hover:bg-[#7D0E3E]', btnText: 'text-white', badgeBg: 'bg-[#97144D] text-white', accentText: 'text-[#97144D]' };
+      }
+      if (n.includes('kotak')) {
+        return { cardBg: 'bg-[#FFF5F5]', border: 'border-2 border-[#ED1B24]', btnBg: 'bg-[#ED1B24] hover:bg-[#C9121A]', btnText: 'text-white', badgeBg: 'bg-[#ED1B24] text-white', accentText: 'text-[#ED1B24]' };
+      }
+      if (n.includes('hdfc')) {
+        return { cardBg: 'bg-[#F2F7FC]', border: 'border-2 border-[#004C8F]', btnBg: 'bg-[#004C8F] hover:bg-[#003766]', btnText: 'text-white', badgeBg: 'bg-[#004C8F] text-white', accentText: 'text-[#004C8F]' };
+      }
+      if (n.includes('sbi')) {
+        return { cardBg: 'bg-[#F0F7FF]', border: 'border-2 border-[#004A97]', btnBg: 'bg-[#004A97] hover:bg-[#003875]', btnText: 'text-white', badgeBg: 'bg-[#004A97] text-white', accentText: 'text-[#004A97]' };
+      }
+      if (n.includes('poonawalla')) {
+        return { cardBg: 'bg-[#FCF2F7]', border: 'border-2 border-[#A00055]', btnBg: 'bg-[#A00055] hover:bg-[#850046]', btnText: 'text-white', badgeBg: 'bg-[#A00055] text-white', accentText: 'text-[#A00055]' };
+      }
+      if (n.includes('tata')) {
+        return { cardBg: 'bg-[#F8F4FD]', border: 'border-2 border-[#60269E]', btnBg: 'bg-[#60269E] hover:bg-[#4E1E82]', btnText: 'text-white', badgeBg: 'bg-[#60269E] text-white', accentText: 'text-[#60269E]' };
+      }
+      if (n.includes('branch')) {
+        return { cardBg: 'bg-[#F0F5FF]', border: 'border-2 border-[#0B2545]', btnBg: 'bg-[#0B2545] hover:bg-[#081C33]', btnText: 'text-white', badgeBg: 'bg-[#0B2545] text-white', accentText: 'text-[#0B2545]' };
+      }
+      if (n.includes('mpokket')) {
+        return { cardBg: 'bg-[#F0F9FF]', border: 'border-2 border-[#0284C7]', btnBg: 'bg-[#0284C7] hover:bg-[#0369A1]', btnText: 'text-white', badgeBg: 'bg-[#0284C7] text-white', accentText: 'text-[#0284C7]' };
+      }
+      if (n.includes('true balance')) {
+        return { cardBg: 'bg-[#FFF5F2]', border: 'border-2 border-[#EA580C]', btnBg: 'bg-[#EA580C] hover:bg-[#C2410C]', btnText: 'text-white', badgeBg: 'bg-[#EA580C] text-white', accentText: 'text-[#EA580C]' };
+      }
+      if (n.includes('paapapay')) {
+        return { cardBg: 'bg-[#FAF8F5]', border: 'border-2 border-[#451A03]', btnBg: 'bg-[#451A03] hover:bg-[#290E02]', btnText: 'text-white', badgeBg: 'bg-[#451A03] text-white', accentText: 'text-[#451A03]' };
+      }
+      if (n.includes('zapcash')) {
+        return { cardBg: 'bg-[#F0FDF4]', border: 'border-2 border-[#16A34A]', btnBg: 'bg-[#16A34A] hover:bg-[#15803D]', btnText: 'text-white', badgeBg: 'bg-[#16A34A] text-white', accentText: 'text-[#16A34A]' };
+      }
+      if (n.includes('myflot')) {
+        return { cardBg: 'bg-[#FAF5FF]', border: 'border-2 border-[#7E22CE]', btnBg: 'bg-[#7E22CE] hover:bg-[#6B21A8]', btnText: 'text-white', badgeBg: 'bg-[#7E22CE] text-white', accentText: 'text-[#7E22CE]' };
+      }
+      if (n.includes('roarbank')) {
+        return { cardBg: 'bg-[#F8FAFC]', border: 'border-2 border-[#1E293B]', btnBg: 'bg-[#1E293B] hover:bg-[#0F172A]', btnText: 'text-white', badgeBg: 'bg-[#1E293B] text-white', accentText: 'text-[#1E293B]' };
+      }
+      if (n.includes('pop upi') || n.includes('popclub')) {
+        return { cardBg: 'bg-[#FEF2F2]', border: 'border-2 border-[#DC2626]', btnBg: 'bg-[#DC2626] hover:bg-[#B91C1C]', btnText: 'text-white', badgeBg: 'bg-[#DC2626] text-white', accentText: 'text-[#DC2626]' };
+      }
+      if (n.includes('kiwi')) {
+        return { cardBg: 'bg-[#F0FDF4]', border: 'border-2 border-[#059669]', btnBg: 'bg-[#059669] hover:bg-[#047857]', btnText: 'text-white', badgeBg: 'bg-[#059669] text-white', accentText: 'text-[#059669]' };
+      }
+      if (n.includes('scapia')) {
+        return { cardBg: 'bg-[#FFF1F2]', border: 'border-2 border-[#E11D48]', btnBg: 'bg-[#E11D48] hover:bg-[#BE123C]', btnText: 'text-white', badgeBg: 'bg-[#E11D48] text-white', accentText: 'text-[#E11D48]' };
+      }
+      if (n.includes('bobcard') || n.includes('fuel & utility') || n.includes('valueback')) {
+        return { cardBg: 'bg-[#FFF7ED]', border: 'border-2 border-[#EA580C]', btnBg: 'bg-[#EA580C] hover:bg-[#C2410C]', btnText: 'text-white', badgeBg: 'bg-[#EA580C] text-white', accentText: 'text-[#EA580C]' };
+      }
+      if (n.includes('novio') || n.includes('sbm')) {
+        return { cardBg: 'bg-[#FAF5FF]', border: 'border-2 border-[#581C87]', btnBg: 'bg-[#581C87] hover:bg-[#4C1D95]', btnText: 'text-white', badgeBg: 'bg-[#581C87] text-white', accentText: 'text-[#581C87]' };
+      }
+      if (n.includes('kreditbee')) {
+        return { cardBg: 'bg-[#FFFDF5]', border: 'border-2 border-[#D97706]', btnBg: 'bg-[#D97706] hover:bg-[#B45309]', btnText: 'text-white', badgeBg: 'bg-[#D97706] text-white', accentText: 'text-[#D97706]' };
+      }
+      if (n.includes('bharatpe')) {
+        return { cardBg: 'bg-[#F0FDFA]', border: 'border-2 border-[#0D9488]', btnBg: 'bg-[#0D9488] hover:bg-[#0F766E]', btnText: 'text-white', badgeBg: 'bg-[#0D9488] text-white', accentText: 'text-[#0D9488]' };
+      }
+      if (n.includes('au bank') || n.includes('aubank')) {
+        return { cardBg: 'bg-[#FFF7ED]', border: 'border-2 border-[#F97316]', btnBg: 'bg-[#F97316] hover:bg-[#EA580C]', btnText: 'text-white', badgeBg: 'bg-[#F97316] text-white', accentText: 'text-[#F97316]' };
+      }
+      if (n.includes('indusind')) {
+        return { cardBg: 'bg-[#FDF2F4]', border: 'border-2 border-[#9F1239]', btnBg: 'bg-[#9F1239] hover:bg-[#881337]', btnText: 'text-white', badgeBg: 'bg-[#9F1239] text-white', accentText: 'text-[#9F1239]' };
+      }
+      if (n.includes('rbl')) {
+        return { cardBg: 'bg-[#F0F4FA]', border: 'border-2 border-[#1E3A8A]', btnBg: 'bg-[#1E3A8A] hover:bg-[#172554]', btnText: 'text-white', badgeBg: 'bg-[#1E3A8A] text-white', accentText: 'text-[#1E3A8A]' };
+      }
+      if (n.includes('yes bank') || n.includes('yes')) {
+        return { cardBg: 'bg-[#F0F9FF]', border: 'border-2 border-[#0284C7]', btnBg: 'bg-[#0284C7] hover:bg-[#0369A1]', btnText: 'text-white', badgeBg: 'bg-[#0284C7] text-white', accentText: 'text-[#0284C7]' };
+      }
+      if (n.includes('idfc')) {
+        return { cardBg: 'bg-[#FFF1F2]', border: 'border-2 border-[#BE123C]', btnBg: 'bg-[#BE123C] hover:bg-[#9F1239]', btnText: 'text-white', badgeBg: 'bg-[#BE123C] text-white', accentText: 'text-[#BE123C]' };
+      }
+      if (n.includes('jio')) {
+        return { cardBg: 'bg-[#F0F7FF]', border: 'border-2 border-[#0A2885]', btnBg: 'bg-[#0A2885] hover:bg-[#081E66]', btnText: 'text-white', badgeBg: 'bg-[#0A2885] text-white', accentText: 'text-[#0A2885]' };
+      }
+      if (n.includes('dbs')) {
+        return { cardBg: 'bg-[#FFF5F5]', border: 'border-2 border-[#E11D48]', btnBg: 'bg-[#E11D48] hover:bg-[#BE123C]', btnText: 'text-white', badgeBg: 'bg-[#E11D48] text-white', accentText: 'text-[#E11D48]' };
+      }
+      if (n.includes('kissht')) {
+        return { cardBg: 'bg-[#EEF2FF]', border: 'border-2 border-[#4F46E5]', btnBg: 'bg-[#4F46E5] hover:bg-[#4338CA]', btnText: 'text-white', badgeBg: 'bg-[#4F46E5] text-white', accentText: 'text-[#4F46E5]' };
+      }
+      if (n.includes('ring')) {
+        return { cardBg: 'bg-[#F5F3FF]', border: 'border-2 border-[#7C3AED]', btnBg: 'bg-[#7C3AED] hover:bg-[#6D28D9]', btnText: 'text-white', badgeBg: 'bg-[#7C3AED] text-white', accentText: 'text-[#7C3AED]' };
+      }
+      if (n.includes('unity')) {
+        return { cardBg: 'bg-[#F0F9FF]', border: 'border-2 border-[#0284C7]', btnBg: 'bg-[#0284C7] hover:bg-[#0369A1]', btnText: 'text-white', badgeBg: 'bg-[#0284C7] text-white', accentText: 'text-[#0284C7]' };
+      }
+      if (n.includes('incred')) {
+        return { cardBg: 'bg-[#FFF7ED]', border: 'border-2 border-[#EA580C]', btnBg: 'bg-[#EA580C] hover:bg-[#C2410C]', btnText: 'text-white', badgeBg: 'bg-[#EA580C] text-white', accentText: 'text-[#EA580C]' };
+      }
+      if (n.includes('ram fincorp')) {
+        return { cardBg: 'bg-[#EFF6FF]', border: 'border-2 border-[#1D4ED8]', btnBg: 'bg-[#1D4ED8] hover:bg-[#1E40AF]', btnText: 'text-white', badgeBg: 'bg-[#1D4ED8] text-white', accentText: 'text-[#1D4ED8]' };
+      }
+      if (n.includes('salary advance') || n.includes('cashwise')) {
+        return { cardBg: 'bg-[#ECFEFF]', border: 'border-2 border-[#0891B2]', btnBg: 'bg-[#0891B2] hover:bg-[#0E7490]', btnText: 'text-white', badgeBg: 'bg-[#0891B2] text-white', accentText: 'text-[#0891B2]' };
+      }
+      if (n.includes('pocketly') || n.includes('moneyview') || n.includes('fatakpay') || n.includes('quick cash')) {
+        return { cardBg: 'bg-[#F0FDF4]', border: 'border-2 border-[#059669]', btnBg: 'bg-[#059669] hover:bg-[#047857]', btnText: 'text-white', badgeBg: 'bg-[#059669] text-white', accentText: 'text-[#059669]' };
+      }
+      return { cardBg: 'bg-[#F0F9FF]', border: 'border-2 border-[#2563EB]', btnBg: 'bg-[#2563EB] hover:bg-[#1D4ED8]', btnText: 'text-white', badgeBg: 'bg-[#2563EB] text-white', accentText: 'text-[#2563EB]' };
+    }
+
+    // ==================== 102 OFFERS COMPLETE DATABASE ====================
+
+    // 1. Zero CIBIL Micro Loans (12 Offers)
+    const zeroCibilData = [
+      { id: "zc_pock", name: "Pocketly Instant Micro Loan", logo: "https://www.google.com/s2/favicons?domain=pocketly.in&sz=128", col1Title: "Loan Range", col1Val: "₹500 – ₹10,000", col2Title: "Code", col2Val: "HTY9KF2Q", badge: "Student / Self-Emp", link: "https://pocketly.sng.link/D4bv7/8nx0/g23r?_dl=pocketly%3A%2F%2FReferAndEarnScreen&_ddl=pocketly%3A%2F%2FReferAndEarnScreen&_forward_params=2&code=HTY9KF2Q&name=Md%20Naeem%20Akhtar", sub: "Fast micro direct cash credit for beginner profiles", interest: "Starting 1.5% to 2.5% per month", eligibility: "Age 18+, College Students & Salaried", docs: "PAN, Aadhaar Card & College/Job ID", disbursal: "10-15 Mins direct in bank account", highlight: "No previous CIBIL score required" },
+      { id: "zc_branch", name: "Branch Personal Cash Loan", logo: "https://i.ibb.co/CppxJy0p/images-2.jpg", col1Title: "Reward Credit", col1Val: "Up to ₹300 Bonus", col2Title: "Code", col2Val: "md0664d", badge: "Zero CIBIL Allowed", link: "https://branch.co/download/md0664d", sub: "Minimal doc instant mobile loan without guarantor", interest: "Starting 2.0% per month", eligibility: "Age 21+, Indian Resident with Smartphone", docs: "Aadhaar Card, PAN Card & Bank Account", disbursal: "Under 5 Mins digital processing", highlight: "Up to ₹300 bonus credit on repayment" },
+      { id: "zc_mpkt", name: "mPokket Instant Cash", logo: "https://i.ibb.co/m5BdYPzd/images-3.png", col1Title: "Max Limit", col1Val: "Up to ₹2,00,000", col2Title: "Code", col2Val: "REFN40210957", badge: "College / Salaried", link: "https://click.mpkt.to/9LY3/ti2z5ao8", sub: "Digital loan transfer for student and salaried profiles", interest: "Starting 1.0% to 3.0% per month", eligibility: "Students with College ID or Salaried (₹9K+)", docs: "Student ID / Payslip, Aadhaar, PAN", disbursal: "Direct to Bank/Paytm in 10 mins", highlight: "Trusted by over 1.5 Crore+ students & youths" },
+      { id: "zc_true", name: "True Balance Quick Loan", logo: "https://i.ibb.co/S7JThcZb/images-4.png", col1Title: "Approval", col1Val: "Within 5 Mins", col2Title: "Product", col2Val: "Level-Up Loan", badge: "Paperless KYC", link: "https://truebalance.onelink.me/bMoN/6eturs0h", sub: "Small instant loan without bank statement", interest: "Starting 2.4% per month", eligibility: "Age 18 to 45 years", docs: "Only PAN Card & Aadhaar KYC", disbursal: "Instant 5-Minute Direct Disbursal", highlight: "Level-Up Loan without salary slip" },
+      { id: "zc1", name: "PaapaPay Instant Loan", logo: "https://i.ibb.co/KxvXRGxp/images-3.jpg", col1Title: "Amount", col1Val: "Up to ₹20,000", col2Title: "CIBIL Needed", col2Val: "Zero / Fresh", badge: "Zero Foreclosure", link: "https://leads.banksathi.com/?h=UkExTFRTdTl6RUdtR0l1djZUNUpLUT09", sub: "Collateral-free instant cash loan with minimal docs", interest: "Starting 1.33% per month", eligibility: "Age 20-55 years", docs: "PAN, Aadhaar & Selfie", disbursal: "Direct transfer upon approval", highlight: "Zero foreclosure penalty charges" },
+      { id: "zc2", name: "FatakPay Quick Cash", svgType: "fatakpay", col1Title: "Amount", col1Val: "Up to ₹5,00,000", col2Title: "Approval", col2Val: "100% Digital", badge: "No Collateral", link: "https://loan.gromo.in/fx/kXI6nqhtkS", sub: "Instant disbursal to bank account with minimal paperwork", interest: "Starting 1.25% per month", eligibility: "Salaried & Self-Employed", docs: "PAN Card, Aadhaar Card", disbursal: "Instant disbursal in minutes", highlight: "No physical verification or branch visit" },
+      { id: "zc3", name: "Zapcash Instant Micro Loan", logo: "https://i.ibb.co/Q7h6s5vh/zapcash-in-logo.jpg", col1Title: "Amount", col1Val: "Up to ₹50,000", col2Title: "Verification", col2Val: "Fast Digital", badge: "New to Credit", link: "https://loan.gromo.in/xa/kXI6nqhtkS", sub: "Approval in minutes with basic KYC and zero collateral", interest: "Starting 1.5% per month", eligibility: "Age 19+, Smartphone users", docs: "PAN & Aadhaar Card", disbursal: "Minutes transfer straight to bank", highlight: "Designed for small urgent requirements" },
+      { id: "zc4", name: "Myflot Instant Micro Credit", logo: "https://i.ibb.co/35t0mNsN/images-4.jpg", col1Title: "Starting From", col1Val: "₹1,000 to ₹99,000", col2Title: "Tenure", col2Val: "3 to 12 Months", badge: "Regulated NBFC", link: "https://loan.gromo.in/mx/kXI6nqhtkS", sub: "Ideal for low CIBIL and beginner profiles", interest: "Starting 1.33% per month", eligibility: "Age 21+, Indian Citizen", docs: "Minimal digital KYC docs", disbursal: "Fast digital transfer", highlight: "Backed by trusted NBFC partners" },
+      { id: "zc5", name: "Kissht Instant Personal Loan", logo: "https://www.google.com/s2/favicons?domain=kissht.com&sz=128", col1Title: "Amount", col1Val: "₹5,000 – ₹5 Lakhs", col2Title: "Docs", col2Val: "PAN & Selfie Only", badge: "No Branch Visit", link: "https://loan.gromo.in/kh/kXI6nqhtkS", sub: "Instant approval in minutes without guarantor", interest: "Starting 1.5% per month", eligibility: "Self-Employed / Salaried", docs: "PAN, Aadhaar & Selfie", disbursal: "In minutes for eligible profiles", highlight: "100% online process, no branch visit" },
+      { id: "zc6", name: "Ring Instant Credit Loan", svgType: "ring", col1Title: "Credit Limit", col1Val: "Up to ₹5,00,000", col2Title: "Speed", col2Val: "Direct Account", badge: "Digital KYC", link: "https://loan.gromo.in/rn/kXI6nqhtkS", sub: "Quick online process designed for regular expenses", interest: "Starting 1.5% per month", eligibility: "Age 21+, Any regular income", docs: "PAN & Aadhaar Card", disbursal: "Immediate bank payout", highlight: "Scan & pay or direct transfer anytime" },
+      { id: "zc7", name: "Salary Advance (Cashwise)", logo: "https://i.ibb.co/27KbN71R/images-8.png", col1Title: "Advance Amount", col1Val: "Up to ₹1,50,000", col2Title: "Tenure", col2Val: "Up to 45 Days", badge: "Rates from 1%", link: "https://loan.gromo.in/cw/kXI6nqhtkS", sub: "Check eligibility in 2 minutes, advance before salary", interest: "Starting at just 1% rate", eligibility: "Salaried individuals", docs: "PAN, Aadhaar & Salary Account", disbursal: "Direct in account in 2 mins", highlight: "Short tenure up to 45 days emergency cash" },
+      { id: "zc8", name: "BharatPe Credit Line on UPI", logo: "https://www.google.com/s2/favicons?domain=bharatpe.com&sz=128", col1Title: "Usage", col1Val: "Scan & Pay on UPI", col2Title: "Approval", col2Val: "Basis Profile", badge: "UPI Credit Line", link: "https://loan.gromo.in/bo/kXI6nqhtkS", sub: "Use credit directly on UPI for merchant transactions", interest: "Competitive interest on utilized amount", eligibility: "Merchants / Regular UPI Users", docs: "PAN & Aadhaar linked bank account", disbursal: "Instant line activation", highlight: "Pay via UPI even when bank balance is low" }
+    ];
+
+    // 2. Regular Credit Cards (32 Offers)
+    const cardsData = [
+      { id: "c1", name: "Flipkart Axis Bank Card", logo: "https://www.google.com/s2/favicons?domain=axisbank.com&sz=128", col1Title: "Cashback", col1Val: "5% Unlimited", col2Title: "Joining Fee", col2Val: "₹500 (Welcome ₹350)", badge: "Cashback King", link: "https://sales.gromo.in/ac/kXI6nqhtkS", sub: "5% on Flipkart, 4% on Swiggy & Uber", interest: "3.6% per month (APR 52.86%)", eligibility: "Age 21-65, Salaried/Self-Employed", docs: "PAN, Aadhaar & Income Proof / ITR", disbursal: "Card delivered in 5-7 business days", highlight: "Unlimited 5% cashback on Flipkart & Myntra" },
+      { id: "c2", name: "Roarbank Credit Card", logo: "https://i.ibb.co/N29JQtfD/images-5.png", col1Title: "Cashback", col1Val: "Up to 20%", col2Title: "Annual Fee", col2Val: "₹0 Lifetime Free", badge: "20% Cashback", link: "https://sales.gromo.in/rr/kXI6nqhtkS", sub: "Zero joining & annual fee, ₹3 Lakh limit", interest: "Standard retail card interest", eligibility: "Age 21+, Good credit profile", docs: "Digital KYC (PAN & Aadhaar)", disbursal: "Instant virtual card generated", highlight: "Up to 20% cashback on 2 selected categories" },
+      { id: "c3", name: "Axis Bank Neo Credit Card", logo: "https://www.google.com/s2/favicons?domain=axisbank.com&sz=128", col1Title: "Discounts", col1Val: "10% Blinkit/Zomato", col2Title: "Fee", col2Val: "Lifetime FREE", badge: "Lifetime Free", link: "https://sales.gromo.in/ack/kXI6nqhtkS", sub: "Flat ₹120 off on Zomato, 10% on Myntra", interest: "3.6% per month", eligibility: "Age 18-70 years", docs: "PAN Card, Aadhaar Card", disbursal: "Direct approval & fast delivery", highlight: "Flat ₹120 off on Zomato, 10% on Blinkit" },
+      { id: "c4", name: "Weekend Rewards Card", logo: "https://www.google.com/s2/favicons?domain=rblbank.com&sz=128", col1Title: "Rewards", col1Val: "2X on Weekends", col2Title: "Forex Fee", col2Val: "Low 1.8%", badge: "Movie Tickets", link: "https://sales.gromo.in/di/kXI6nqhtkS", sub: "Free movie tickets every month & 3000 bonus RP", interest: "3.75% per month", eligibility: "Age 21-60 years", docs: "PAN, Aadhaar, Bank Statement", disbursal: "Virtual approval in 24 hrs", highlight: "2X reward points on weekend dining & shopping" },
+      { id: "c5", name: "Uni Gold Credit Card", logo: "https://www.google.com/s2/favicons?domain=uni.cards&sz=128", col1Title: "Gold Back", col1Val: "Up to 5% Gold", col2Title: "Annual Fee", col2Val: "₹0 Lifetime Free", badge: "Zero Forex", link: "https://sales.gromo.in/ug/kXI6nqhtkS", sub: "1% Assured Gold cashback, zero forex markup", interest: "Zero interest on timely repayment", eligibility: "Age 21+, Good credit record", docs: "Paperless digital Aadhaar KYC", disbursal: "Instant digital activation", highlight: "Unlimited 5% Gold cashback on top apps" },
+      { id: "c6", name: "AU Bank Credit Card", logo: "https://www.google.com/s2/favicons?domain=aubank.in&sz=128", col1Title: "Variant", col1Val: "LIT / Altura / Zenith", col2Title: "Annual Fee", col2Val: "Lifetime Free*", badge: "AU Verified", link: "https://sales.gromo.in/auc/kXI6nqhtkS", sub: "Instant virtual card with easy digital onboarding", interest: "Starting 1.99% - 3.49% per month", eligibility: "Age 21-60, Salaried or Business", docs: "PAN & Aadhaar / VKYC", disbursal: "Instant virtual card access", highlight: "Customizable rewards and lifetime free options" },
+      { id: "c7", name: "HDFC Pixel Play Card", logo: "https://www.google.com/s2/favicons?domain=hdfcbank.com&sz=128", col1Title: "Custom Cashback", col1Val: "5% Choice Packs", col2Title: "Platform", col2Val: "PayZapp Digital", badge: "HDFC Digital", link: "https://sales.gromo.in/hpx/kXI6nqhtkS", sub: "5% cashback on 2 merchants, 3% on Amazon/Flipkart", interest: "3.6% per month", eligibility: "Age 21+, Indian Resident", docs: "100% digital via PayZapp", disbursal: "Instant in PayZapp wallet", highlight: "Customize billing date & merchant rewards" },
+      { id: "c8", name: "SBI Credit Card", logo: "https://www.google.com/s2/favicons?domain=sbicard.com&sz=128", col1Title: "Perks", col1Val: "Dining & Travel", col2Title: "Rewards", col2Val: "Reward Points", badge: "SBI Official", link: "https://sales.gromo.in/xs/kXI6nqhtkS", sub: "Instant discounts on shopping, dining & fuel", interest: "3.5% per month", eligibility: "Age 21-65 years", docs: "PAN, Aadhaar & Income Proof", disbursal: "48-72 hrs verification", highlight: "Highest merchant acceptance across India" },
+      { id: "c9", name: "Federal Scapia Travel Card", logo: "https://i.ibb.co/Ldx05n5c/images-7.jpg", col1Title: "Forex Markup", col1Val: "0% Zero Forex", col2Title: "Lounge Access", col2Val: "Unlimited Domestic", badge: "Zero Fee", link: "https://sales.gromo.in/scp/kXI6nqhtkS", sub: "20% Scapia coins on travel, ₹0 joining & annual fee", interest: "3.49% per month", eligibility: "Age 23-60, CIBIL 750+", docs: "PAN & Aadhaar linked mobile", disbursal: "Instant virtual card in app", highlight: "Zero forex markup on all global spending" },
+      { id: "c10", name: "Kotak League Credit Card", logo: "https://www.google.com/s2/favicons?domain=kotak.com&sz=128", col1Title: "Movies", col1Val: "8 Free PVR Tickets", col2Title: "Annual Fee", col2Val: "Lifetime Free", badge: "Zero Annual Fee", link: "https://sales.gromo.in/kd/kXI6nqhtkS", sub: "Up to 8 RP per ₹150 spent, fuel surcharge waiver", interest: "3.5% per month", eligibility: "Age 21-65, Income ₹5L+ p.a.", docs: "PAN & Aadhaar details", disbursal: "Instant in-principle sanction", highlight: "8 free PVR tickets every year on milestone" },
+      { id: "c11", name: "10X Online Rewards Card", logo: "https://www.google.com/s2/favicons?domain=sbicard.com&sz=128", col1Title: "Rewards", col1Val: "10X Reward Points", col2Title: "Welcome", col2Val: "₹500 e-Voucher", badge: "Online Spends", link: "https://sales.gromo.in/bn/kXI6nqhtkS", sub: "Annual fee reversal on ₹1 Lakh spend, ₹2000 vouchers", interest: "3.5% per month", eligibility: "Salaried or Self-Employed", docs: "PAN & Aadhaar KYC", disbursal: "Card delivery within 7 days", highlight: "10X rewards on exclusive partner sites" },
+      { id: "c12", name: "IDFC FIRST Lifetime Free", logo: "https://www.google.com/s2/favicons?domain=idfcfirstbank.com&sz=128", col1Title: "Rewards", col1Val: "10X Never Expire", col2Title: "Joining Fee", col2Val: "₹0 Lifetime Free", badge: "Never Expire RP", link: "https://sales.gromo.in/if/kXI6nqhtkS", sub: "25% off on movies, roadside assistance worth ₹1499", interest: "Low interest starting from 0.75% - 3.49% p.m.", eligibility: "Age 21+, Good credit profile", docs: "Digital Aadhaar & PAN verification", disbursal: "Virtual card generated in 5 mins", highlight: "Reward points never expire & 0% ATM fee" },
+      { id: "c13", name: "POP UPI RuPay Card", logo: "https://i.ibb.co/TBxmhcGC/images-5.jpg", col1Title: "Welcome Gift", col1Val: "1500 POPcoins", col2Title: "Fee", col2Val: "Lifetime Free", badge: "UPI RuPay", link: "https://sales.gromo.in/yp/kXI6nqhtkS", sub: "1 POPcoin = ₹1 on POP Shop, Zomato & Cleartrip perks", interest: "3.5% per month", eligibility: "Age 21-55 years", docs: "PAN & Aadhaar VKYC", disbursal: "Instant UPI card linking", highlight: "Earn 1000 POPcoins on UPI link" },
+      { id: "c14", name: "Fuel & Utility RuPay Card", logo: "https://i.ibb.co/HL7DCWrS/images-7.png", col1Title: "Fuel Rewards", col1Val: "Up to 24X Rewards", col2Title: "Welcome Bonus", col2Val: "Worth ₹1650", badge: "RuPay UPI", link: "https://sales.gromo.in/fl/kXI6nqhtkS", sub: "30X rewards on Grocery/FASTag, zero fee on spend", interest: "3.49% per month", eligibility: "Age 21+, Salaried / Business", docs: "Standard KYC documents", disbursal: "Delivered within 7 days", highlight: "Up to 24X rewards on fuel spends" },
+      { id: "c15", name: "KIWI RuPay Credit Card", logo: "https://i.ibb.co/SD5pbVMB/images-6.png", col1Title: "UPI Cashback", col1Val: "2X Assured", col2Title: "Annual Fee", col2Val: "Lifetime Free", badge: "Top UPI Card", link: "https://sales.gromo.in/ky/kXI6nqhtkS", sub: "No min spend, instant bank redemption, virtual card", interest: "Zero interest if paid within 50 days", eligibility: "Age 21+, Smartphone users", docs: "100% digital PAN/Aadhaar", disbursal: "Instant virtual card in 2 mins", highlight: "2X cashback directly credited to bank account" },
+      { id: "c16", name: "Tata Neu HDFC Credit Card", logo: "https://www.google.com/s2/favicons?domain=tatadigital.com&sz=128", col1Title: "NeuCoins", col1Val: "Up to 10% Back", col2Title: "Lounge Access", col2Val: "8 Dom + 4 Int", badge: "HDFC + Tata", link: "https://sales.gromo.in/tn/kXI6nqhtkS", sub: "1 NeuCoin = ₹1, fee returned on 1st transaction in 90 days", interest: "3.6% per month", eligibility: "Age 21-60 years", docs: "PAN & Aadhaar / Bank details", disbursal: "Immediate virtual linking", highlight: "Up to 10% cashback as NeuCoins on Tata Neu" },
+      { id: "c17", name: "Salary Days 37.5% Reward Card", logo: "https://www.google.com/s2/favicons?domain=axisbank.com&sz=128", col1Title: "Salary Days", col1Val: "37.5% Reward Rate", col2Title: "Lounge Access", col2Val: "12 Visits/Year", badge: "High Reward", link: "https://sales.gromo.in/ls/kXI6nqhtkS", sub: "1st & last day UPI spends par 37.5% rewards", interest: "3.6% per month", eligibility: "Salaried individuals", docs: "Salary account KYC", disbursal: "Instant in app", highlight: "Industry's highest reward rate on salary days" },
+      { id: "c18", name: "Exclusive Shopping Cashback Card", logo: "https://www.google.com/s2/favicons?domain=icicibank.com&sz=128", col1Title: "Lounge", col1Val: "Airport Lounge", col2Title: "Perks", col2Val: "Monthly Vouchers", badge: "Lifestyle", link: "https://sales.gromo.in/hy/kXI6nqhtkS", sub: "Exclusive cashback on online shopping & fuel surcharge waiver", interest: "3.5% per month", eligibility: "Age 21-65 years", docs: "PAN & Aadhaar Card", disbursal: "Direct bank dispatch", highlight: "Complimentary airport lounge access" },
+      { id: "c19", name: "Tata Neu Infinity Card", logo: "https://www.google.com/s2/favicons?domain=tatadigital.com&sz=128", col1Title: "NeuCoins", col1Val: "10% Cashback", col2Title: "Lounge Access", col2Val: "Domestic & Int.", badge: "Tata Neu", link: "https://sales.gromo.in/th/kXI6nqhtkS", sub: "10% value on Tata brands (Croma, BigBasket, 1mg)", interest: "3.6% per month", eligibility: "Income ₹1L+/month or CIBIL 750+", docs: "PAN & Aadhaar details", disbursal: "Instant virtual approval", highlight: "Complimentary domestic & international lounge" },
+      { id: "c20", name: "Jupiter Edge+ Credit Card", logo: "https://www.google.com/s2/favicons?domain=jupiter.money&sz=128", col1Title: "Shopping", col1Val: "10% Cashback", col2Title: "Credit Limit", col2Val: "Up to ₹7 Lakh", badge: "Hotstar Free", link: "https://sales.gromo.in/zf/kXI6nqhtkS", sub: "10% on Amazon/Flipkart/Myntra, free 1-yr Hotstar", interest: "3.5% per month", eligibility: "Age 21+, Good score", docs: "Digital in-app onboarding", disbursal: "Instant in Jupiter app", highlight: "Free Disney+ Hotstar subscription included" },
+      { id: "c21", name: "IndianOil Fuel Credit Card", logo: "https://www.google.com/s2/favicons?domain=iocl.com&sz=128", col1Title: "Fuel Benefit", col1Val: "8.5% Valueback", col2Title: "Free Fuel", col2Val: "250L Annually", badge: "Fuel Saver", link: "https://sales.gromo.in/ri/kXI6nqhtkS", sub: "3,000 fuel points welcome gift, 15 fuel pts per ₹100", interest: "3.5% per month", eligibility: "Vehicle owners / Salaried", docs: "PAN & Aadhaar Card", disbursal: "Standard dispatch", highlight: "Save up to 250 Litres of fuel every year" },
+      { id: "c22", name: "Axis Bank MyZone Card", logo: "https://www.google.com/s2/favicons?domain=axisbank.com&sz=128", col1Title: "Entertainment", col1Val: "BOGO Movies", col2Title: "Fee", col2Val: "Lifetime FREE", badge: "Axis MyZone", link: "https://sales.gromo.in/oe/kXI6nqhtkS", sub: "Swiggy discounts, complimentary SonyLIV & lounge", interest: "3.6% per month", eligibility: "Age 18-70 years", docs: "PAN Card, Aadhaar Card", disbursal: "Quick virtual setup", highlight: "Buy 1 Get 1 Free on movie tickets via Paytm" },
+      { id: "c23", name: "LIC Co-branded Credit Card", logo: "https://www.google.com/s2/favicons?domain=licindia.in&sz=128", col1Title: "LIC Payments", col1Val: "2 RP / ₹100", col2Title: "Lounge", col2Val: "8 Visits/Year", badge: "Lifetime Free", link: "https://sales.gromo.in/li/kXI6nqhtkS", sub: "Signature variant: lifetime free & fuel waiver", interest: "3.25% per month", eligibility: "LIC Policyholders / Salaried", docs: "PAN, Aadhaar & Policy copy", disbursal: "Dispatch in 5-7 days", highlight: "Extra reward points on LIC premium payments" },
+      { id: "c24", name: "Zagg RuPay Credit Card", logo: "https://i.ibb.co/TBm2V7L6/images-10.jpg", col1Title: "Swiggy & Instamart", col1Val: "Flat 40% OFF", col2Title: "Fee", col2Val: "Lifetime FREE", badge: "BOGO Movies", link: "https://sales.gromo.in/zg/kXI6nqhtkS", sub: "3% Zagg Coins on UPI, BookMyShow BOGO free", interest: "3.5% per month", eligibility: "Age 21+, Smartphone user", docs: "Digital KYC", disbursal: "Instant virtual card", highlight: "Flat 40% off on Swiggy and Instamart orders" },
+      { id: "c25", name: "RBL Bank Shoprite Card", logo: "https://www.google.com/s2/favicons?domain=rblbank.com&sz=128", col1Title: "Groceries", col1Val: "5% Cashback", col2Title: "Fee", col2Val: "Lifetime Free", badge: "Limited Free", link: "https://sales.gromo.in/rt/kXI6nqhtkS", sub: "10% discount on Bookmyshow tickets, fuel surcharge waiver", interest: "3.75% per month", eligibility: "Age 21-65 years", docs: "PAN, Aadhaar & Income Doc", disbursal: "Within 5-7 days", highlight: "5% cashback on grocery shopping" },
+      { id: "c26", name: "IndusInd Tiger Credit Card", logo: "https://www.google.com/s2/favicons?domain=indusind.com&sz=128", col1Title: "Lounge Access", col1Val: "Dom + Int Free", col2Title: "Fee", col2Val: "Zero Annual Fee", badge: "Tiger Edition", link: "https://sales.gromo.in/it/kXI6nqhtkS", sub: "Free movie ticket every 6 months, 6X reward points", interest: "Starting 1.5% - 3.83% p.m.", eligibility: "Salaried / Self-Employed", docs: "PAN & Aadhaar Card", disbursal: "Instant in-principle card", highlight: "Complimentary domestic & international lounges" },
+      { id: "c27", name: "Valueback RuPay Fuel Card", svgType: "rupayfuel", col1Title: "Fuel Return", col1Val: "100% Valueback", col2Title: "Network", col2Val: "UPI RuPay Card", badge: "100% Valueback", link: "https://sales.gromo.in/ah/kXI6nqhtkS", sub: "4% on fuel, 10% on BookMyShow", interest: "3.49% per month", eligibility: "Age 21-60 years", docs: "PAN & Aadhaar", disbursal: "Standard dispatch", highlight: "100% valueback on first fuel spend" },
+      { id: "c28", name: "KIWI YES Bank RuPay Card", logo: "https://i.ibb.co/SD5pbVMB/images-6.png", col1Title: "UPI Cashback", col1Val: "2X Assured", col2Title: "Annual Fee", col2Val: "Lifetime Free", badge: "YES Bank + Kiwi", link: "https://sales.gromo.in/kw/kXI6nqhtkS", sub: "Zero joining fee, instant virtual card activation", interest: "Zero interest for 50 days", eligibility: "Age 21+, Good profile", docs: "Digital Aadhaar/PAN", disbursal: "Instant in Kiwi app", highlight: "Seamless UPI scan & pay with assured cashback" },
+      { id: "c29", name: "YES BANK Credit Card", logo: "https://www.google.com/s2/favicons?domain=yesbank.in&sz=128", col1Title: "Discounts", col1Val: "Shopping & Grocery", col2Title: "Process", col2Val: "100% Digital", badge: "YES Official", link: "https://sales.gromo.in/yc/kXI6nqhtkS", sub: "Paperless journey, cashback on shopping and utility bills", interest: "3.5% per month", eligibility: "Age 21-60 years", docs: "PAN, Aadhaar & Salary details", disbursal: "48 hours processing", highlight: "Exciting rewards on online utility bill payments" },
+      { id: "c30", name: "Premium Travel & Lounge Card", logo: "https://www.google.com/s2/favicons?domain=visa.co.in&sz=128", col1Title: "Forex Markup", col1Val: "0% Zero Forex", col2Title: "Lounge Access", col2Val: "Unlimited Free", badge: "Zero Fee", link: "https://leads.banksathi.com/?h=ekNVMm4rVFF2VGFjcmo2LytGVUNPdz09", sub: "Zero joining fee, 10% coins back on travel", interest: "3.5% per month", eligibility: "Age 23+, Travel enthusiasts", docs: "PAN, Aadhaar Card", disbursal: "Fast digital setup", highlight: "Unlimited domestic & international lounge visits" },
+      { id: "c31", name: "Flipkart Axis Card (BankSathi)", logo: "https://www.google.com/s2/favicons?domain=flipkart.com&sz=128", col1Title: "Cashback", col1Val: "5% Unlimited", col2Title: "Welcome", col2Val: "₹600 Benefits", badge: "Top Seller", link: "https://leads.banksathi.com/?h=T0pTSEZxcm8xeEErYVZtdnJ2QTREZz09", sub: "Airport lounge access, 15% dining discounts", interest: "3.6% per month", eligibility: "Age 21-65 years", docs: "PAN, Aadhaar & Income Proof", disbursal: "Direct card delivery", highlight: "5% unlimited cashback & lounge access" },
+      { id: "c32", name: "Airtel Axis Bank Credit Card", logo: "https://www.google.com/s2/favicons?domain=airtel.in&sz=128", col1Title: "Airtel Bills", col1Val: "25% Cashback", col2Title: "Swiggy/Zomato", col2Val: "10% Cashback", badge: "25% Cashback", link: "https://leads.banksathi.com/?h=WG9oWHRobDJwUENOVVB3aCtNd2FhQT09", sub: "₹500 Amazon voucher, 10% on utilities via Airtel Thanks", interest: "3.6% per month", eligibility: "Age 21-65 years", docs: "PAN, Aadhaar & Airtel app account", disbursal: "Within 5-7 days", highlight: "25% cashback on mobile, broadband & DTH bills" }
+    ];
+
+    // 3. Demat & Investments (20 Offers)
+    const dematInvestData = [
+      { id: "d1", name: "Angel One Free Demat", logo: "https://www.google.com/s2/favicons?domain=angelone.in&sz=128", col1Title: "A/c Opening", col1Val: "₹0 Free Account", col2Title: "Brokerage", col2Val: "₹0 Delivery / ₹20 F&O", badge: "Free 1st Yr AMC", link: "https://leads.goldenteam.in/?h=SHFjNEhEQWY0bEZrdCtwUGVOS21QZz09", sub: "100% digital & paperless onboarding, free AMC", interest: "Zero AMC for 1st Year", eligibility: "Age 18+ with PAN Card", docs: "PAN Card, Aadhaar Card, Bank Proof", disbursal: "Account opened in 15 mins", highlight: "₹0 brokerage on equity delivery trades" },
+      { id: "d2", name: "Upstox Pro Demat Account", logo: "https://www.google.com/s2/favicons?domain=upstox.com&sz=128", col1Title: "A/c Opening", col1Val: "Zero Charges", col2Title: "Mutual Funds", col2Val: "Zero Commission", badge: "Top Broker", link: "https://sales.gromo.in/ud/kXI6nqhtkS", sub: "Simple paperless onboarding, zero AMC for 1st year", interest: "Zero AMC 1st Year", eligibility: "Age 18+, Bank account holder", docs: "PAN, Aadhaar & Cancelled Cheque", disbursal: "Instant account activation", highlight: "Zero commission on Mutual Funds & IPOs" },
+      { id: "d3", name: "HDFC Sky Demat Account", logo: "https://www.google.com/s2/favicons?domain=hdfcsky.com&sz=128", col1Title: "Brokerage", col1Val: "Flat ₹20 / Order", col2Title: "Maintenance", col2Val: "Zero AMC 1st Yr", badge: "HDFC Trust", link: "https://sales.gromo.in/sk/kXI6nqhtkS", sub: "Buy Stocks Pay Later with MTF, zero charges", interest: "Flat ₹20 across all segments", eligibility: "Age 18+", docs: "PAN, Aadhaar Card", disbursal: "Fast digital onboarding", highlight: "Buy stocks pay later with Margin Trade Funding" },
+      { id: "d4", name: "Motilal Oswal Free Demat", logo: "https://www.google.com/s2/favicons?domain=motilaloswal.com&sz=128", col1Title: "AMC", col1Val: "Lifetime FREE AMC", col2Title: "A/c Opening", col2Val: "₹0 Free Opening", badge: "Expert Tips", link: "https://leads.banksathi.com/?h=YzNFWGg3ZjRPT01pdzgrUVlKSWhUUT09", sub: "30+ years legacy, expert research & stock tips", interest: "Lifetime Free AMC", eligibility: "Age 18+", docs: "PAN, Aadhaar Card & Selfie", disbursal: "Active in 15 minutes", highlight: "Free expert stock recommendations & advisory" },
+      { id: "d5", name: "InCred Stocko Demat", logo: "https://www.google.com/s2/favicons?domain=incredmoney.com&sz=128", col1Title: "Brokerage", col1Val: "₹2.99 / ₹9 F&O", col2Title: "Opening Fee", col2Val: "₹0 Free", badge: "Lowest Brokerage", link: "https://sales.gromo.in/cy/kXI6nqhtkS", sub: "Advanced TradingView charts & option builder", interest: "Flat ₹2.99 delivery / ₹9 F&O", eligibility: "Age 18+", docs: "PAN, Aadhaar & Bank Details", disbursal: "Same day activation", highlight: "Industry lowest ₹2.99 per trade brokerage" },
+      { id: "d6", name: "Kotak Securities Demat", logo: "https://www.google.com/s2/favicons?domain=kotaksecurities.com&sz=128", col1Title: "Intraday", col1Val: "Zero Brokerage", col2Title: "Platform", col2Val: "Single App", badge: "Kotak Trust", link: "https://sales.gromo.in/ks/kXI6nqhtkS", sub: "Invest in Stocks, IPOs, Mutual Funds & ETFs", interest: "Zero brokerage for youths under Trade Free Plan", eligibility: "Age 18+", docs: "PAN & Aadhaar linked mobile", disbursal: "Quick paperless account", highlight: "Zero brokerage on intraday stock trades" },
+      { id: "d7", name: "5paisa Demat Account", logo: "https://www.google.com/s2/favicons?domain=5paisa.com&sz=128", col1Title: "Brokerage", col1Val: "₹0 for 30 Days", col2Title: "Opening Fee", col2Val: "Zero Charges", badge: "Basket Orders", link: "https://sales.gromo.in/fp/kXI6nqhtkS", sub: "Place up to 10 basket orders, expert advisory", interest: "Zero brokerage for first month", eligibility: "Age 18+", docs: "PAN, Aadhaar & Bank details", disbursal: "Digital verification in 10 mins", highlight: "Multi-order basket investing & robo-advisory" },
+      { id: "d8", name: "Choice Connect Demat", logo: "https://www.google.com/s2/favicons?domain=choiceindia.com&sz=128", col1Title: "AMC 1st Year", col1Val: "Zero AMC", col2Title: "Call & Trade", col2Val: "Free Facility", badge: "Choice Connect", link: "https://leads.banksathi.com/?h=SmtlbDRxN1RXTm1qVnhoSFlPS0FoQT09", sub: "All-in-one platform for stocks, mutual funds, ETFs", interest: "Zero AMC for 1st Year", eligibility: "Age 18+", docs: "PAN, Aadhaar Card", disbursal: "Direct online opening", highlight: "Dedicated research analyst assistance" },
+      { id: "d9", name: "Choice Connect Pro", logo: "https://www.google.com/s2/favicons?domain=choiceindia.com&sz=128", col1Title: "Advisory", col1Val: "Expert Support", col2Title: "Brokerage", col2Val: "Low Fees", badge: "Real-time Alerts", link: "https://sales.gromo.in/cd/kXI6nqhtkS", sub: "User-friendly mobile trading app", interest: "Discount brokerage plans", eligibility: "Age 18+", docs: "Digital Aadhaar/PAN", disbursal: "Instant setup", highlight: "Real-time stock alerts & expert advisory" },
+      { id: "d10", name: "Rupeezy Demat Account", logo: "https://i.ibb.co/3P2y6BF/images-6.jpg", col1Title: "MTF Margin", col1Val: "Up to 5X MTF", col2Title: "A/c Plan", col2Val: "₹299 Special Plan", badge: "AI Analytics", link: "https://leads.banksathi.com/?h=Z3V4MnRUb0tENjVpN0JSYTBRUThvQT09", sub: "AI-powered market assistance, instant withdrawal", interest: "Low MTF interest rates", eligibility: "Active traders / Age 18+", docs: "PAN, Aadhaar & Bank statement", disbursal: "Instant verification", highlight: "Up to 5X margin trade funding with AI tools" },
+      { id: "d11", name: "Zero Brokerage Demat", logo: "https://www.google.com/s2/favicons?domain=mstock.com&sz=128", col1Title: "Equity Delivery", col1Val: "₹0 Brokerage", col2Title: "AMC", col2Val: "Lifetime Free AMC", badge: "Zero Brokerage", link: "https://sales.gromo.in/lm/kXI6nqhtkS", sub: "Safe, secure and lightning fast trading", interest: "Lifetime Zero Brokerage Plan", eligibility: "Age 18+", docs: "PAN Card, Aadhaar Card", disbursal: "Immediate activation", highlight: "Zero brokerage across intraday, delivery & F&O" },
+      { id: "d12", name: "InCred Stocko (BankSathi)", logo: "https://www.google.com/s2/favicons?domain=incredmoney.com&sz=128", col1Title: "A/c Opening", col1Val: "₹0 Fee", col2Title: "AMC", col2Val: "₹0 Free", badge: "100% Online", link: "https://leads.banksathi.com/?h=NDFUR0RZQkNERit1UG8vczQ1d0Y4QT09", sub: "Stocks, IPOs & Mutual Funds in one dashboard", interest: "Zero AMC charges", eligibility: "Age 18+", docs: "PAN, Aadhaar Card", disbursal: "Paperless KYC", highlight: "Zero account opening & annual charges" },
+      { id: "d13", name: "Discount Demat & Trading", logo: "https://www.google.com/s2/favicons?domain=fyers.in&sz=128", col1Title: "MTF", col1Val: "Lowest MTF Rates", col2Title: "Brokerage", col2Val: "Flat ₹20 / Order", badge: "Nil Charges", link: "https://leads.banksathi.com/?h=MmRrVS9xNGpzSm1PcmFrdWIrenhBdz09", sub: "Start in just 15 minutes, seamless trading", interest: "Flat ₹20 per trade", eligibility: "Age 18+", docs: "PAN & Aadhaar details", disbursal: "Quick digital activation", highlight: "Lowest margin trade finance rates in India" },
+      { id: "d14", name: "Invest BharatPe High Return FD", logo: "https://www.google.com/s2/favicons?domain=bharatpe.com&sz=128", col1Title: "Min Deposit", col1Val: "From ₹1,00,0", col2Title: "Partners", col2Val: "Bajaj / Shriram", badge: "Top FD Rates", link: "https://sales.gromo.in/fg/kXI6nqhtkS", sub: "Book fixed deposit with flexible tenure from 30 days", interest: "Earn up to 9.1% to 9.5% p.a. returns", eligibility: "Age 18+, Any Indian Citizen", docs: "PAN & Aadhaar details only", disbursal: "Instant digital FD certificate", highlight: "Backed by Bajaj Finance & Shriram Finance" },
+      { id: "d15", name: "Jiraaf High Return Bonds", logo: "https://www.google.com/s2/favicons?domain=jiraaf.com&sz=128", col1Title: "Returns (p.a.)", col1Val: "8% to 15% Returns", col2Title: "Income", col2Val: "Fixed & Predictable", badge: "Curated Bonds", link: "https://sales.gromo.in/jb/kXI6nqhtkS", sub: "Curated secure issuers, 100% digital investment", interest: "8% – 15% p.a. fixed predictable returns", eligibility: "Age 18+, Retail investors", docs: "PAN Card, Bank details", disbursal: "Immediate bond allotment", highlight: "Curated corporate bonds with monthly payout" },
+      { id: "d16", name: "BharatPe 24K Digital Gold", logo: "https://www.google.com/s2/favicons?domain=bharatpe.com&sz=128", col1Title: "Min Amount", col1Val: "From ₹2,000", col2Title: "Storage", col2Val: "SafeGold Insured", badge: "Live Gold Rates", link: "https://sales.gromo.in/yd/kXI6nqhtkS", sub: "24K 99.9% pure gold, sell anytime after 48 hrs", interest: "Market linked real-time appreciation", eligibility: "Open for all users", docs: "Zero physical paperwork", disbursal: "Instant in digital vault", highlight: "100% insured vaults powered by SafeGold" },
+      { id: "d17", name: "ICICI Prudential Mutual Fund", logo: "https://www.google.com/s2/favicons?domain=icicipruamc.com&sz=128", col1Title: "Starting SIP", col1Val: "From just ₹100", col2Title: "Demat Required", col2Val: "No Demat Needed", badge: "PAN + OTP", link: "https://sales.gromo.in/ct/kXI6nqhtkS", sub: "Equity, Index, Hybrid & Tax-Saving funds", interest: "Market linked long-term compound growth", eligibility: "Age 18+, KYC compliant", docs: "PAN Card, Aadhaar linked OTP", disbursal: "Direct folio setup in 2 mins", highlight: "Start SIP with just ₹100 without Demat" },
+      { id: "d18", name: "Axis Multi SIP (10 SIPs in 1)", logo: "https://www.google.com/s2/favicons?domain=axismf.com&sz=128", col1Title: "Min Investment", col1Val: "From ₹1,000", col2Title: "Feature", col2Val: "10 SIPs in 1 Txn", badge: "Diversified", link: "https://sales.gromo.in/mc/kXI6nqhtkS", sub: "Lower risk & higher stability with basket SIPs", interest: "Diversified market portfolio returns", eligibility: "Age 18+", docs: "PAN & Bank auto-debit setup", disbursal: "Automated monthly SIP", highlight: "Invest in 10 top funds in a single transaction" },
+      { id: "d19", name: "Axis Mutual Fund Regular SIP", logo: "https://www.google.com/s2/favicons?domain=axismf.com&sz=128", col1Title: "Min SIP", col1Val: "From ₹100", col2Title: "Tax Benefit", col2Val: "ELSS Tax Saving", badge: "Professional AMC", link: "https://sales.gromo.in/af/kXI6nqhtkS", sub: "Professional fund management across equities", interest: "Equity & Index fund market growth", eligibility: "Age 18+", docs: "PAN, Aadhaar KYC", disbursal: "Instant folio generation", highlight: "Save tax under section 80C with ELSS" },
+      { id: "d20", name: "Frax Smart Investment", logo: "https://www.google.com/s2/favicons?domain=frax.in&sz=128", col1Title: "Min Investment", col1Val: "From ₹10,000", col2Title: "Process", col2Val: "Simple & Safe", badge: "Smart Wealth", link: "https://sales.gromo.in/kf/kXI6nqhtkS", sub: "Grow your money the smart way with wealth solutions", interest: "High yield institutional fixed returns", eligibility: "Age 18+", docs: "PAN Card, Bank details", disbursal: "Direct investment confirmation", highlight: "Transparent fixed income wealth opportunities" }
+    ];
+
+    // 4. Regular Personal Loans (26 Offers)
+    const loansData = [
+      { id: "l1", name: "Moneyview Personal Loan", logo: "https://www.google.com/s2/favicons?domain=moneyview.in&sz=128", col1Title: "Amount", col1Val: "Up to ₹5,00,000", col2Title: "Tenure", col2Val: "Up to 60 Months", badge: "2 Min Approval", link: "https://loan.gromo.in/mv/kXI6nqhtkS", sub: "Digital loan with instant bank disbursal", interest: "Starting 1.33% per month", eligibility: "Salaried/Self-Employed (₹15K+ income)", docs: "PAN, Aadhaar & 3 Months Bank Statement", disbursal: "Instant approval, 24 hr disbursal", highlight: "Flexible loan up to ₹5 Lakhs, tenure to 60 months" },
+      { id: "l5", name: "Lendingplate Personal Loan", logo: "https://www.google.com/s2/favicons?domain=lendingplate.com&sz=128", col1Title: "Amount", col1Val: "Flexible Amount", col2Title: "Security", col2Val: "Collateral-Free", badge: "No Hidden Fee", link: "https://loan.gromo.in/lp/kXI6nqhtkS", sub: "Fast access to funds with secure digital KYC", interest: "Starting 1.5% - 2.5% per month", eligibility: "Salaried individuals (Age 21-58)", docs: "PAN, Aadhaar, Net Banking verification", disbursal: "Within 30 mins post approval", highlight: "100% collateral-free with no hidden fees" },
+      { id: "l6", name: "Unity Small Finance Bank", svgType: "unity", col1Title: "Amount", col1Val: "Up to ₹5,00,000", col2Title: "Visit", col2Val: "No Bank Visit", badge: "Bank Loan", link: "https://loan.gromo.in/ut/kXI6nqhtkS", sub: "Bank sanctioned personal loan within minutes", interest: "Starting 11.5% p.a.", eligibility: "Salaried & Self-Employed", docs: "PAN, Aadhaar & Income Proof", disbursal: "Direct from bank in minutes", highlight: "Bank sanctioned loan without visiting any branch" },
+      { id: "l7", name: "KreditBee Personal Loan", logo: "https://www.google.com/s2/favicons?domain=kreditbee.in&sz=128", col1Title: "Amount", col1Val: "₹7,000 – ₹5 Lakhs", col2Title: "Disbursal", col2Val: "10 Minutes", badge: "DSA100 0% Fee", link: "https://loan.gromo.in/kb/kXI6nqhtkS", sub: "Zero processing fees with code DSA100", interest: "Starting 1.02% - 2.49% per month", eligibility: "Age 21-58, Min Income ₹10,000", docs: "PAN, Aadhaar & Salary account statement", disbursal: "10-Minute direct bank transfer", highlight: "Use code DSA100 for 0% processing fees" },
+      { id: "l10", name: "BharatPe Personal Loan", logo: "https://www.google.com/s2/favicons?domain=bharatpe.com&sz=128", col1Title: "Amount", col1Val: "Fast Approval", col2Title: "Tenure", col2Val: "Flexible", badge: "Direct Bank", link: "https://loan.gromo.in/bb/kXI6nqhtkS", sub: "Digital credit for business & personal expenses", interest: "Starting 1.4% per month", eligibility: "Merchants / Regular UPI Account holders", docs: "PAN, Aadhaar & UPI transaction history", disbursal: "Direct to bank in minutes", highlight: "Easy daily or monthly EMI options" },
+      { id: "l13", name: "HDFC Jumbo Loan", logo: "https://www.google.com/s2/favicons?domain=hdfcbank.com&sz=128", col1Title: "Amount", col1Val: "Against Limit", col2Title: "Tenure", col2Val: "12 - 60 Months", badge: "Card Holder", link: "https://leads.banksathi.com/?h=dWh6bGgxV2M4NjRMaWVMSlNpMFk2Zz09", sub: "Direct money without affecting credit limit", interest: "Pre-approved cardholder rates (12%-15% p.a.)", eligibility: "Existing HDFC Bank Credit Card holders", docs: "Zero physical paperwork required", disbursal: "Instant credit to bank account", highlight: "Loan amount is over and above credit card limit" },
+      { id: "l14", name: "Poonawalla Fincorp", logo: "https://www.google.com/s2/favicons?domain=poonawallafincorp.com&sz=128", col1Title: "Amount", col1Val: "Up to ₹5,00,000", col2Title: "Foreclosure", col2Val: "₹0 Zero Penalty", badge: "Zero Foreclosure", link: "https://leads.banksathi.com/?h=UCtkdUliZnhUbzFnRnRyVm9hYmhDdz09", sub: "Collateral-free loan with 100% transparency", interest: "Starting 9.99% p.a. (0.83% p.m.)", eligibility: "Salaried individuals (₹20K+ salary)", docs: "PAN, Aadhaar, 3 Months Payslip/Bank Statement", disbursal: "Fast digital disbursal within 24 hrs", highlight: "Zero foreclosure & part-payment charges" },
+      { id: "l15", name: "InCred Personal Loan", svgType: "incred", col1Title: "Amount", col1Val: "Up to ₹15,00,000", col2Title: "Disbursal", col2Val: "15 Minutes", badge: "15 Min Transfer", link: "https://leads.banksathi.com/?h=Tk42Qm9vc3V5TDNNTG1jNWZIOFFpZz09", sub: "Quick disbursal for salaried profiles", interest: "Starting 13.99% p.a.", eligibility: "Salaried employees (Age 21-50)", docs: "PAN, Aadhaar & Salary account statement", disbursal: "Sanction and payout in 15 mins", highlight: "Higher loan amounts up to ₹15 Lakhs" },
+      { id: "l16", name: "Ram Fincorp", logo: "https://i.ibb.co/62J3KF9/a0a98e284c1ac8d5ce4788153f958f33-fgraphic.png", col1Title: "Amount", col1Val: "Instant Cash", col2Title: "Process", col2Val: "Paperless", badge: "No Collateral", link: "https://leads.banksathi.com/?h=cXBFQ3BHZjFIMG5yTU9BTzBIOUxWZz09", sub: "Fast digital processing through Kundan Finance", interest: "Starting 1.5% per month", eligibility: "Age 21-55 years", docs: "PAN & Aadhaar details", disbursal: "Direct online transfer", highlight: "100% paperless verification" },
+      { id: "l17", name: "Fast Flexible Loan", logo: "https://www.google.com/s2/favicons?domain=kreditbee.in&sz=128", col1Title: "Amount", col1Val: "₹25,000 - ₹5 Lakh", col2Title: "Tenure", col2Val: "3 - 42 Months", badge: "Quick Disbursal", link: "https://leads.banksathi.com/?h=NGtidW1GbDJCVm5FejV4MG9ha3Ixdz09", sub: "Instant money for all personal requirements", interest: "Starting 1.2% per month", eligibility: "Salaried / Self-Employed", docs: "PAN & Aadhaar KYC", disbursal: "Immediate bank credit", highlight: "Flexible tenure from 3 to 42 months" },
+      { id: "l18", name: "Instant Cash Loan", logo: "https://i.ibb.co/m5BdYPzd/images-3.png", col1Title: "Amount", col1Val: "Up to ₹20,000", col2Title: "Tenure", col2Val: "Short Term", badge: "Fast Approval", link: "https://leads.banksathi.com/?h=MnFrODR0dCtWaU53N0dKcFduZU9FUT09", sub: "Fast digital KYC for salaried & self-employed", interest: "Starting 1.5% per month", eligibility: "Young earners / Students", docs: "ID Proof & Bank Details", disbursal: "Within 10 minutes", highlight: "Pocket money micro credit directly in bank" },
+      { id: "l20", name: "Tata Neu Loan", logo: "https://www.google.com/s2/favicons?domain=tatadigital.com&sz=128", col1Title: "Amount", col1Val: "Up to ₹10,00,000", col2Title: "Disbursal", col2Val: "10 Minutes", badge: "Tata Trust", link: "https://leads.banksathi.com/?h=dUdVZlB0WTQwSU1wQ0sxeG1nUVd5dz09", sub: "Higher loan amounts at affordable interest rates", interest: "Starting 10.49% p.a.", eligibility: "Salaried / Professionals (Age 21-55)", docs: "PAN, Aadhaar & Net banking verification", disbursal: "Disbursal in 10 minutes", highlight: "Backed by trusted Tata Capital ecosystem" },
+      { id: "l21", name: "MY Money Bazar", logo: "https://i.ibb.co/nNXZ5h4x/unnamed.png", col1Title: "Amount", col1Val: "Up to ₹30,000", col2Title: "Docs", col2Val: "Minimal", badge: "Minutes Approval", link: "https://leads.banksathi.com/?h=eUVUOWJST05takVudzJ1WlBoQk95UT09", sub: "No heavy paperwork, easy EMI options", interest: "Starting 1.5% per month", eligibility: "Age 20+, Regular income", docs: "PAN Card, Aadhaar Card", disbursal: "Within a few hours", highlight: "Easy online repayment installments" },
+      { id: "l22", name: "Insta Approved Loan", logo: "https://www.google.com/s2/favicons?domain=cashe.co.in&sz=128", col1Title: "Amount", col1Val: "Up to ₹10,00,000", col2Title: "Approval", col2Val: "5 Minutes", badge: "5 Min Approval", link: "https://leads.banksathi.com/?h=ZDc3d0x5a3ZQL1RkMHpwRmZqeVJ6UT09", sub: "Zero foreclosure charges, tenure up to 60 months", interest: "Starting 1.5% per month", eligibility: "Salaried individuals (₹15K+ salary)", docs: "PAN, Aadhaar & Salary statement", disbursal: "5-Minute credit decision", highlight: "Zero foreclosure charges, up to 60 months tenure" },
+      { id: "l23", name: "Digital Hassle-Free", logo: "https://www.google.com/s2/favicons?domain=moneyview.in&sz=128", col1Title: "Amount", col1Val: "Up to ₹5,00,000", col2Title: "Tenure", col2Val: "12 - 48 Months", badge: "Instant Disbursal", link: "https://leads.banksathi.com/?h=WGM4Yjl6Y294Q0kvNmdCSDlnTFUrZz09", sub: "100% digital process without security", interest: "Starting 1.33% per month", eligibility: "Salaried or Self-Employed", docs: "PAN, Aadhaar Card", disbursal: "Direct to bank account", highlight: "100% collateral-free online process" },
+      { id: "l24", name: "NIRA Instant Loan", logo: "https://www.google.com/s2/favicons?domain=nirafinance.com&sz=128", col1Title: "Amount", col1Val: "Up to ₹1,00,000", col2Title: "Steps", col2Val: "3 Easy Steps", badge: "Low Interest", link: "https://leads.banksathi.com/?h=aVU5YU03aDRBektkQmc1NEs0YUw0QT09", sub: "Setup auto-debit and avail funds in bank", interest: "Starting 1.5% per month", eligibility: "Salaried (Min salary ₹12,000)", docs: "PAN, Aadhaar & 3 Months Bank Statement", disbursal: "Within 24 hours in bank", highlight: "Credit line format — pay interest only on used money" },
+      { id: "l25", name: "10-Min Fast Loan", logo: "https://www.google.com/s2/favicons?domain=fibe.in&sz=128", col1Title: "Amount", col1Val: "Up to ₹1,00,000", col2Title: "Speed", col2Val: "10 Min Disbursal", badge: "10 Min Cash", link: "https://leads.banksathi.com/?h=TFNIZEZyRytyNzNpQklNNG9QUkNFUT09", sub: "No collateral required with fast verification", interest: "Starting 1.25% - 2.0% per month", eligibility: "Salaried individuals (Age 21-50)", docs: "PAN, Aadhaar & Salary slips", disbursal: "Under 10 minutes", highlight: "Instant cash disbursal straight to bank account" },
+      { id: "l26", name: "B4Salary Loan", logo: "https://i.ibb.co/k2rf7Vp5/images-9.jpg", col1Title: "Amount", col1Val: "Up to ₹1,00,000", col2Title: "Foreclosure", col2Val: "Zero Penalty", badge: "No Foreclosure", link: "https://leads.banksathi.com/?h=RXBKcmw1RUhWd3FqUjI0NUw5RnhJZz09", sub: "Quick approval for salaried emergencies", interest: "Starting 1.5% per month", eligibility: "Salaried employees", docs: "PAN, Aadhaar & Payslips", disbursal: "Same day transfer", highlight: "Zero penalty on early loan foreclosure" },
+      { id: "l27", name: "Digital Credit Cash", logo: "https://www.google.com/s2/favicons?domain=faircent.com&sz=128", col1Title: "Amount", col1Val: "Fast Credit", col2Title: "Process", col2Val: "100% Digital", badge: "Quick Disbursal", link: "https://leads.banksathi.com/?h=Vmo0Z3FyMDN6Y3EvRit2UjdUM3VsQT09", sub: "Flexible tenure for personal requirements", interest: "Starting 12% p.a.", eligibility: "Salaried & Self-Employed", docs: "PAN, Aadhaar Card", disbursal: "Fast digital transfer", highlight: "P2P regulated low cost loan facility" },
+      { id: "l28", name: "PaisaBox Instant", logo: "https://i.ibb.co/TBm2V7L6/images-10.jpg", col1Title: "Amount", col1Val: "Up to ₹50,000", col2Title: "Fee", col2Val: "Zero Hidden", badge: "Quick Approval", link: "https://leads.banksathi.com/?h=d2U1bCszd2tvaHlmbklGMVBZZ2djZz09", sub: "Collateral-free loan with minimal documentation", interest: "Starting 1.5% per month", eligibility: "Age 20-55 years", docs: "PAN Card, Aadhaar Card", disbursal: "Digital payout in bank", highlight: "Zero hidden charges, clear schedule" },
+      { id: "l29", name: "Hero FinCorp Loan", logo: "https://www.google.com/s2/favicons?domain=herofincorp.com&sz=128", col1Title: "Amount", col1Val: "Up to ₹5,00,000", col2Title: "Tenure", col2Val: "12 - 36 Months", badge: "Hero Trust", link: "https://leads.banksathi.com/?h=cGdWSHRXR0x4Uy90K0ExK0xtMUcxQT09", sub: "100% digital and paperless process", interest: "Starting 1.25% per month (15% p.a.)", eligibility: "Salaried & Self-Employed (₹15K+ income)", docs: "PAN, Aadhaar & Bank verification", disbursal: "Within 24 to 48 hours", highlight: "Backed by reliable Hero Group trust" },
+      { id: "l30", name: "Quick Cash ₹40k", svgType: "quickcash", col1Title: "Amount", col1Val: "Up to ₹40,000", col2Title: "Disbursal", col2Val: "Within 24 Hours", badge: "5 Min Approval", link: "https://leads.banksathi.com/?h=S2dhUnpmK2hwekhuUXYwZXR3cnFDUT09", sub: "No part-payment or foreclosure charges", interest: "Starting 1.5% per month", eligibility: "Age 21+, Smartphone users", docs: "PAN & Aadhaar details", disbursal: "Disbursal within 24 hours", highlight: "Zero part-payment or prepayment fees" },
+      { id: "l31", name: "Quick Cash ₹50k", svgType: "quickcash", col1Title: "Amount", col1Val: "Up to ₹50,000", col2Title: "Speed", col2Val: "5 Min Approval", badge: "24h Disbursal", link: "https://leads.banksathi.com/?h=R1JkM3NyZXNQTkR4RmZxZlZFREk2Zz09", sub: "100% digital application and fast payout", interest: "Starting 1.33% per month", eligibility: "Salaried individuals", docs: "PAN, Aadhaar & Net banking", disbursal: "Direct in bank account", highlight: "Transparent fee structure with zero penalty" },
+      { id: "l32", name: "CREDIT91 Loan", logo: "https://i.ibb.co/TBm2V7L6/images-10.jpg", col1Title: "Offers", col1Val: "Transparent", col2Title: "Partners", col2Val: "Regulated NBFC", badge: "Secure KYC", link: "https://leads.banksathi.com/?h=MjA4UFAwYytsT05WT0dvOTViK2Rodz09", sub: "EMI & charges shown before acceptance", interest: "Starting 1.5% per month", eligibility: "Indian Citizens (Age 21-55)", docs: "PAN Card, Aadhaar Card", disbursal: "Fast verification & payout", highlight: "Full charges shown upfront before agreement" },
+      { id: "l33", name: "Salaried Instant", logo: "https://i.ibb.co/27KbN71R/images-8.png", col1Title: "Amount", col1Val: "Up to ₹2,00,000", col2Title: "Eligibility", col2Val: "Age 21-55", badge: "Direct Bank", link: "https://leads.banksathi.com/?h=SUhRbjlsVE51bjVSd0h1T1dUZ0lTZz09", sub: "PAN, Aadhaar/KYC & bank details verification", interest: "Starting 1.5% per month", eligibility: "Salaried (Min salary ₹15,000)", docs: "PAN, Aadhaar & Salary Account", disbursal: "Within 2 to 4 hours", highlight: "Quick credit before next salary cycle" },
+      { id: "l34", name: "ASAP Finance", logo: "https://i.ibb.co/BH6GFqWs/logotransparent.png", col1Title: "Amount", col1Val: "Up to ₹5,00,000", col2Title: "Tenure", col2Val: "Up to 3 Years", badge: "Fast Direct Bank", link: "https://leads.banksathi.com/?h=OE9XOGxsR1ovZzAwdStOWHVSN3JwUT09", sub: "Direct bank transfer for personal requirements", interest: "Starting 1.3% per month", eligibility: "Salaried & Self-Employed", docs: "PAN & Aadhaar details", disbursal: "Fast digital transfer", highlight: "Flexible tenure up to 3 years" }
+    ];
+
+    // 5. Savings Accounts (5 Offers)
+    const savingsData = [
+      { id: "s1", name: "Kotak 811 Zero Balance A/c", logo: "https://www.google.com/s2/favicons?domain=kotak.com&sz=128", col1Title: "Balance Requirement", col1Val: "Zero Balance", col2Title: "Interest Rate", col2Val: "Up to 4.0% p.a.", badge: "Open in 3 Mins", link: "https://sales.gromo.in/kt/kXI6nqhtkS", sub: "No balance maintenance, free virtual debit card, up to ₹6,000 cashback", interest: "Up to 4.0% p.a. on savings balance", eligibility: "Age 18+, Resident Indian", docs: "PAN Card, Aadhaar Card with active mobile", disbursal: "Account opened instantly in 3 mins", highlight: "₹0 monthly maintenance & free virtual debit card" },
+      { id: "s2", name: "Kotak 811 Savings Pro", logo: "https://www.google.com/s2/favicons?domain=kotak.com&sz=128", col1Title: "Debit Card", col1Val: "Free Virtual Card", col2Title: "Cashback", col2Val: "Up to ₹6000", badge: "Instant Account", link: "https://sales.gromo.in/tk/kXI6nqhtkS", sub: "Zero monthly balance maintenance with high cashback benefits", interest: "Up to 4.0% p.a. interest", eligibility: "Age 18+, Indian Citizen", docs: "PAN Card & Aadhaar details", disbursal: "Instant in-app account", highlight: "Up to ₹6,000 cashback on debit card spends" },
+      { id: "s3", name: "Jio Payments Bank Zero Balance", svgType: "jio", col1Title: "Minimum Balance", col1Val: "₹0 Zero Balance", col2Title: "Interest Rate", col2Val: "Up to 6.5% p.a.", badge: "Free Debit Card", link: "https://sales.gromo.in/pj/kXI6nqhtkS", sub: "Free Platinum Debit Card for ATM & shopping, Savings Pro interest", interest: "Earn up to 6.5% with Savings Pro", eligibility: "Age 18+ with active mobile number", docs: "Aadhaar Card and PAN Card", disbursal: "Account active within minutes", highlight: "Zero balance maintenance & free Platinum debit card" },
+      { id: "s4", name: "IDFC FIRST Savings Account", logo: "https://www.google.com/s2/favicons?domain=idfcfirstbank.com&sz=128", col1Title: "Interest Rate", col1Val: "Up to 6.5% p.a.", col2Title: "ATM Facility", col2Val: "Free & Unlimited", badge: "Pre-Approved Loans", link: "https://leads.banksathi.com/?h=dnAzQWxSeWdJcEhRNWxZeTZQRUZldz09", sub: "Unlimited free ATM withdrawals, accidental cover & pre-approved loans", interest: "Up to 6.5% p.a. monthly compound interest", eligibility: "Age 18+, Resident Indian", docs: "PAN, Aadhaar & Video KYC", disbursal: "Instant account with net banking", highlight: "Unlimited free ATM withdrawals across any bank ATM" },
+      { id: "s5", name: "DBS digibank Savings Account", logo: "https://www.google.com/s2/favicons?domain=dbs.com&sz=128", col1Title: "Welcome Cashback", col1Val: "₹300 Cashback", col2Title: "Interest Rate", col2Val: "Up to 5.5% p.a.", badge: "Zero Transfer Fee", link: "https://leads.banksathi.com/?h=bDJvUGdieUNMSzVWbUVYT2txdzZhZz09", sub: "Zero-fee fund transfers (UPI, NEFT, IMPS), zero-fee mutual fund investments", interest: "Up to 5.5% p.a. on savings balance", eligibility: "Age 18+, Smartphone users", docs: "PAN Card, Aadhaar Card & Selfie", disbursal: "Instant digital activation", highlight: "Flat ₹300 welcome cashback & zero transfer charges" }
+    ];
+
+    // 6. Secured Credit Cards Against FD (7 Offers)
+    const securedCardsData = [
+      { id: "sc1", name: "SBM Novio Secured Credit Card", logo: "https://i.ibb.co/dJVqnWzT/images-8.jpg", col1Title: "Minimum FD", col1Val: "From ₹2,000", col2Title: "Annual Fee", col2Val: "₹0 Lifetime Free", badge: "RuPay Card", link: "https://sales.gromo.in/om/kXI6nqhtkS", sub: "Guaranteed approval, up to ₹23,000 yearly savings on BookMyShow, Swiggy, Zepto", interest: "FD earns up to 7.0% p.a. interest", eligibility: "Age 18+, No income proof needed", docs: "PAN Card & Aadhaar details only", disbursal: "Instant virtual RuPay credit card", highlight: "Guaranteed 100% approval against ₹2,000 FD" },
+      { id: "sc2", name: "IDFC FIRST Bank Hello Secured Card", logo: "https://www.google.com/s2/favicons?domain=idfcfirstbank.com&sz=128", col1Title: "Cashback Rate", col1Val: "Up to 5% Cashback", col2Title: "Max Rewards", col2Val: "₹18,000 Yearly", badge: "UPI Supported", link: "https://sales.gromo.in/ho/kXI6nqhtkS", sub: "FD-backed credit card with assured approval and direct UPI support", interest: "FD earns up to 7.5% p.a. interest", eligibility: "Age 18+, Anyone with savings", docs: "Digital Aadhaar/PAN KYC", disbursal: "Instant in IDFC FIRST Mobile app", highlight: "Earn up to 5% cashback on daily spends" },
+      { id: "sc3", name: "HDFC Secured Credit Card", logo: "https://www.google.com/s2/favicons?domain=hdfcbank.com&sz=128", col1Title: "Credit Limit", col1Val: "90% of FD Value", col2Title: "Max Limit", col2Val: "Up to ₹8 Lakhs", badge: "No Income Proof", link: "https://sales.gromo.in/hx/kXI6nqhtkS", sub: "Zero income proof needed, build or repair your credit score", interest: "FD earns regular HDFC interest", eligibility: "Age 18+, Fresh or low CIBIL profiles", docs: "PAN Card, Aadhaar Card", disbursal: "Delivered post FD booking", highlight: "Credit limit is 90% of your fixed deposit" },
+      { id: "sc4", name: "FIRST EARN Secured Credit Card", logo: "https://www.google.com/s2/favicons?domain=idfcfirstbank.com&sz=128", col1Title: "UPI Cashback", col1Val: "1% on UPI Spends", col2Title: "Joining Fee", col2Val: "₹499 + GST", badge: "Assured Approval", link: "https://sales.gromo.in/ea/kXI6nqhtkS", sub: "FD-backed assured credit card to build CIBIL with welcome offers", interest: "FD earns up to 7.5% p.a. interest", eligibility: "Age 18+, First time credit builders", docs: "PAN, Aadhaar details", disbursal: "Instant virtual card", highlight: "1% cashback on UPI transactions" },
+      { id: "sc5", name: "IndianOil Axis Bank Secured Card", logo: "https://www.google.com/s2/favicons?domain=axisbank.com&sz=128", col1Title: "Fuel Rewards", col1Val: "20X on IndianOil", col2Title: "Min Deposit", col2Val: "₹15,000 FD", badge: "Zero CIBIL Needed", link: "https://sales.gromo.in/ol/kXI6nqhtkS", sub: "No credit history required, credit limit up to 80% of FD", interest: "FD continues to earn full bank interest", eligibility: "Age 18+, No salary slip needed", docs: "PAN & Aadhaar linked mobile", disbursal: "Delivered within 7 days", highlight: "20X rewards on fuel spends with zero CIBIL" },
+      { id: "sc6", name: "IDFC FIRST WOW! Black Secured Card", logo: "https://www.google.com/s2/favicons?domain=idfcfirstbank.com&sz=128", col1Title: "Forex Markup", col1Val: "0% Zero Forex", col2Title: "Lounge Access", col2Val: "1 Domestic/Quarter", badge: "RuPay UPI", link: "https://sales.gromo.in/wo/kXI6nqhtkS", sub: "₹5,000+ welcome perks, instant virtual card activation", interest: "FD earns up to 7.5% p.a. interest", eligibility: "Age 18+, Assured 100% approval", docs: "Paperless digital verification", disbursal: "Instant virtual card in 5 mins", highlight: "Zero forex fee & 1 domestic lounge visit per quarter" },
+      { id: "sc7", name: "Axis Bank MY Zone Secured Card", logo: "https://www.google.com/s2/favicons?domain=axisbank.com&sz=128", col1Title: "Movies", col1Val: "25% BookMyShow", col2Title: "Dining", col2Val: "Up to 20% Off", badge: "Score Builder", link: "https://sales.gromo.in/od/kXI6nqhtkS", sub: "Card issued against FD to boost credit score, fuel surcharge waiver", interest: "FD earns standard Axis FD rates", eligibility: "Age 18+, Open for non-salaried users", docs: "PAN, Aadhaar Card", disbursal: "Delivered post FD creation", highlight: "Build high CIBIL while getting 25% movie cashback" }
+    ];
+
+    // ==================== ENGINE & TAB CONTROLLER ====================
+
+    let currentCategory = 'zerocibil';
+
+    function getActiveDataset() {
+      if (currentCategory === 'zerocibil') return zeroCibilData;
+      if (currentCategory === 'cards') return cardsData;
+      if (currentCategory === 'demat') return dematInvestData;
+      if (currentCategory === 'loans') return loansData;
+      if (currentCategory === 'savings') return savingsData;
+      if (currentCategory === 'secured') return securedCardsData;
+      return zeroCibilData;
+    }
+
+    function selectCategory(type) {
+      switchTab(type);
+      const target = document.getElementById('offersSection');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function switchTab(type) {
+      currentCategory = type;
+      const tabIds = ['tabZeroCibil', 'tabCards', 'tabDemat', 'tabLoans', 'tabSavings', 'tabSecured'];
+      const heading = document.getElementById('sectionHeading');
+
+      tabIds.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.className = 'px-3 py-1.5 font-semibold text-xs rounded-lg text-slate-600 bg-white border border-slate-200 shrink-0 transition';
+      });
+
+      const activeTabMap = {
+        'zerocibil': ['tabZeroCibil', 'Zero CIBIL & First-Time Borrower Loans'],
+        'cards': ['tabCards', 'Reward & Lifetime Free Credit Cards'],
+        'demat': ['tabDemat', 'Demat & Investment Portfolios'],
+        'loans': ['tabLoans', 'NBFC Personal Loans & Term Credit'],
+        'savings': ['tabSavings', 'Zero Balance Digital Savings Accounts'],
+        'secured': ['tabSecured', 'Secured Credit Cards Against Fixed Deposit']
+      };
+
+      document.getElementById(activeTabMap[type][0]).className = 'px-3 py-1.5 font-bold text-xs rounded-lg text-white bg-blue-600 shadow-sm shrink-0 transition';
+      heading.innerText = activeTabMap[type][1] + ' (' + getActiveDataset().length + ')';
+
+      document.getElementById('globalSearch').value = '';
+      renderList(getActiveDataset());
+    }
+
+    function renderList(list) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = '';
+
+      if (list.length === 0) {
+        document.getElementById('resultCount').innerText = '0 Offers';
+        document.getElementById('noResults').classList.remove('hidden');
+        return;
+      }
+
+      document.getElementById('resultCount').innerText = list.length + ' Offers';
+      document.getElementById('noResults').classList.add('hidden');
+
+      list.forEach(item => {
+        const p = getBrandPalette(item.name);
+        
+        // Dynamic In-Code SVG Logo OR Image Logo
+        let logoHtml = '';
+        let watermarkHtml = '';
+
+        if (item.svgType) {
+          const svgCode = getSvgBadge(item.svgType);
+          logoHtml = `<div class="w-full h-full p-0.5 flex items-center justify-center">${svgCode}</div>`;
+          watermarkHtml = `<div class="absolute -right-6 -bottom-6 w-36 h-36 opacity-15 pointer-events-none transform rotate-12 select-none">${svgCode}</div>`;
+        } else {
+          logoHtml = `<img src="${item.logo}" alt="${item.name}" class="w-full h-full object-contain rounded" onerror="this.onerror=null; this.src='https://imgh.in/host/107qpx';">`;
+          watermarkHtml = `<img src="${item.logo}" alt="" class="absolute -right-6 -bottom-6 w-36 h-36 object-contain opacity-15 pointer-events-none transform rotate-12 select-none" onerror="this.src='https://imgh.in/host/107qpx';">`;
+        }
+
+        const cardHtml = `
+          <div class="${p.cardBg} rounded-xl p-3.5 ${p.border} shadow-sm flex flex-col justify-between app-card relative overflow-hidden">
+            <!-- 15% Prominent Brand Watermark Background -->
+            ${watermarkHtml}
+
+            <div class="relative z-10">
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-10 h-10 rounded-xl bg-white border border-slate-200/80 flex items-center justify-center p-1 shrink-0 shadow-sm overflow-hidden">
+                    ${logoHtml}
+                  </div>
+                  <div>
+                    <h3 class="font-extrabold text-xs text-slate-900 leading-tight">${item.name}</h3>
+                    <span class="text-[9px] text-slate-500 font-medium line-clamp-1">${item.sub}</span>
+                  </div>
+                </div>
+                <span class="text-[8px] font-black px-2 py-0.5 rounded-full ${p.badgeBg} shrink-0 shadow-xs uppercase tracking-wide">
+                  ${item.badge}
+                </span>
+              </div>
+
+              <div class="bg-white/95 backdrop-blur-xs rounded-xl p-2.5 border border-slate-200/70 grid grid-cols-2 gap-2 text-left mb-2.5 shadow-xs">
+                <div>
+                  <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">${item.col1Title}</span>
+                  <span class="text-[11px] font-black text-slate-900">${item.col1Val}</span>
+                </div>
+                <div>
+                  <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">${item.col2Title}</span>
+                  <span class="text-[11px] font-bold text-slate-800">${item.col2Val}</span>
+                </div>
+              </div>
+
+              <!-- Accordion Toggle Button -->
+              <div class="text-center mb-2">
+                <button 
+                  id="btn-${item.id}" 
+                  onclick="toggleDetails('${item.id}')" 
+                  class="text-[10px] font-extrabold ${p.accentText} hover:opacity-80 py-1 transition flex items-center justify-center gap-1 mx-auto"
+                >
+                  View Details & Interest Rate ▼
+                </button>
+              </div>
+
+              <!-- Accordion Expandable Content -->
+              <div id="details-${item.id}" class="hidden mb-3 p-3 bg-white/95 backdrop-blur-xs rounded-xl border border-slate-200 text-[10px] space-y-1.5 text-slate-600 shadow-sm">
+                <div class="flex items-start gap-1"><span class="font-bold text-slate-900 shrink-0">💰 Interest / Fee:</span> <span class="font-semibold text-slate-800">${item.interest}</span></div>
+                <div class="flex items-start gap-1"><span class="font-bold text-slate-900 shrink-0">🎯 Eligibility:</span> <span>${item.eligibility}</span></div>
+                <div class="flex items-start gap-1"><span class="font-bold text-slate-900 shrink-0">📄 Documents:</span> <span>${item.docs}</span></div>
+                <div class="flex items-start gap-1"><span class="font-bold text-slate-900 shrink-0">⏱️ Disbursal/Tenure:</span> <span>${item.disbursal}</span></div>
+                <div class="flex items-start gap-1"><span class="font-bold text-slate-900 shrink-0">✨ Highlight:</span> <span class="text-emerald-700 font-extrabold">${item.highlight}</span></div>
+              </div>
+            </div>
+
+            <a 
+              href="${item.link}" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full text-center ${p.btnBg} ${p.btnText} font-black text-[11px] py-2 rounded-xl transition active:scale-95 block shadow-sm tracking-wide relative z-10"
+            >
+              Apply Now →
+            </a>
+          </div>
+        `;
+        grid.insertAdjacentHTML('beforeend', cardHtml);
+      });
+    }
+
+    function filterCurrentData() {
+      const q = document.getElementById('globalSearch').value.toLowerCase().trim();
+      const currentList = getActiveDataset();
+      const filtered = currentList.filter(item => 
+        item.name.toLowerCase().includes(q) || 
+        item.sub.toLowerCase().includes(q) || 
+        item.badge.toLowerCase().includes(q) || 
+        item.col1Val.toLowerCase().includes(q) ||
+        item.highlight.toLowerCase().includes(q)
+      );
+      renderList(filtered);
+    }
+
+    // Initialize Page
+    calculateEMI();
+    switchTab('zerocibil');
+  </script>
+</body>
+</html>
